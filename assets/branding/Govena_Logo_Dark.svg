@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Govena Logo — Full Horizontal — Dark Version -->
+<!-- Usage: dark charcoal (#1E1E2F) and deep backgrounds -->
+<svg width="300" height="76" viewBox="0 0 300 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGradDark" x1="24" y1="4" x2="24" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A29BFE"/>
+      <stop offset="100%" stop-color="#6C5CE7"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield: same geometry as light, gradient brightened for dark bg -->
+  <g transform="translate(0,8) scale(1.5)">
+    <path d="M24 4L8 10V20C8 30 15 38 24 44C33 38 40 30 40 20V10L24 4Z"
+      fill="url(#shieldGradDark)" stroke="#00B4D8" stroke-width="1" stroke-linejoin="round"/>
+    <circle cx="24" cy="22" r="2.5" fill="#FFFFFF"/>
+    <circle cx="18" cy="14" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+    <circle cx="30" cy="14" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+    <circle cx="14" cy="22" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+    <circle cx="34" cy="22" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+    <circle cx="18" cy="30" r="1.8" fill="#00B4D8"/>
+    <circle cx="30" cy="30" r="1.8" fill="#00B4D8"/>
+    <line x1="18" y1="14" x2="24" y2="22" stroke="#FFFFFF" stroke-width="1" opacity="0.45"/>
+    <line x1="30" y1="14" x2="24" y2="22" stroke="#FFFFFF" stroke-width="1" opacity="0.45"/>
+    <line x1="14" y1="22" x2="24" y2="22" stroke="#FFFFFF" stroke-width="1" opacity="0.45"/>
+    <line x1="34" y1="22" x2="24" y2="22" stroke="#FFFFFF" stroke-width="1" opacity="0.45"/>
+    <line x1="24" y1="22" x2="18" y2="30" stroke="#00B4D8" stroke-width="1" opacity="0.7"/>
+    <line x1="24" y1="22" x2="30" y2="30" stroke="#00B4D8" stroke-width="1" opacity="0.7"/>
+  </g>
+  <!-- Wordmark: white on dark -->
+  <text x="80" y="46"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-weight="700" font-size="34" fill="#FFFFFF" letter-spacing="-1">Govena</text>
+  <!-- Dual underline: electric violet + blue (brighter for dark bg) -->
+  <rect x="80"  y="57" width="58" height="3.5" rx="1.75" fill="#A29BFE"/>
+  <rect x="141" y="57" width="32" height="3.5" rx="1.75" fill="#00B4D8"/>
+</svg>
