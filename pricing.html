@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing — Govena</title>
+  <meta name="description" content="Simple, one-time pricing for your AI governance pack. No subscriptions, no hidden fees. From $499 inc. GST."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://govena.com.au/pricing.html"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Pricing — Govena"/>
+  <meta property="og:description" content="Simple, one-time pricing for your AI governance pack. No subscriptions, no hidden fees. From $499 inc. GST."/>
+  <meta property="og:url" content="https://govena.com.au/pricing.html"/>
+  <meta property="og:image" content="https://govena.com.au/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:site_name" content="Govena"/>
+  <meta property="og:locale" content="en_AU"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Pricing — Govena"/>
+  <meta name="twitter:description" content="Simple, one-time pricing for your AI governance pack. No subscriptions, no hidden fees. From $499 inc. GST."/>
+  <meta name="twitter:image" content="https://govena.com.au/og-image.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700&family=DM+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){
+    window.toggleFaq=function(btn){
+      var body=btn.nextElementSibling;
+      var icon=btn.querySelector('.faq-icon');
+      var isOpen=body.style.maxHeight&&body.style.maxHeight!=='0px';
+      document.querySelectorAll('.faq-body').forEach(function(b){b.style.maxHeight='0px'});
+      document.querySelectorAll('.faq-icon').forEach(function(i){i.textContent='+'});
+      if(!isOpen){body.style.maxHeight=body.scrollHeight+'px';icon.textContent='x'}
+    };
+  });
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--p:#6C5CE7;--v:#A29BFE;--b:#00B4D8;--dark:#0F1729;--gray:#F1F2F6;--white:#fff;--muted:#666;--dim:#8B8FA8;--bdr:rgba(0,0,0,0.08)}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--gray);color:var(--dark);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;height:96px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.08)}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-links a{font-size:18px;color:#555;text-decoration:none;transition:color .2s;font-weight:500}
+    .nav-links a:hover{color:var(--p)}
+    .nav-cta{background:var(--p)!important;color:#fff!important;padding:12px 26px;border-radius:8px;font-weight:600;font-size:18px}
+    .sw{background:#fff;padding:96px 48px}
+    .sg{background:var(--gray);padding:96px 48px}
+    .con{max-width:1100px;margin:0 auto}
+    .sh2{font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;color:var(--dark);margin-bottom:14px}
+    .ssub{font-size:16px;color:var(--muted);line-height:1.7;max-width:580px}
+    .slbl{font-size:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--p);margin-bottom:12px}
+    footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding:56px 48px 28px}
+    .fi2{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap}
+    .fbrand p{font-size:13.5px;color:var(--dim);margin-top:12px;max-width:230px;line-height:1.65}
+    .fcol h4{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--v);margin-bottom:14px}
+    .fcol a{display:block;font-size:13.5px;color:var(--dim);text-decoration:none;margin-bottom:9px;transition:color .2s}
+    .fcol a:hover{color:#fff}
+    .fbtm{max-width:1200px;margin:36px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--dim);flex-wrap:wrap;gap:8px}
+    .fbtm a{color:var(--dim);text-decoration:none}.fbtm a:hover{color:#fff}
+    .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;margin-top:48px}
+    .pc{border-radius:20px;padding:36px;border:1px solid var(--bdr);background:#fff;position:relative;transition:all .22s}
+    .pc:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-2px)}
+    .pc.feat{border-color:var(--p);box-shadow:0 0 0 1px var(--p),0 20px 60px rgba(108,92,231,.14)}
+    .pbadge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--p);color:#fff;font-size:10.5px;font-weight:700;padding:5px 16px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+    .pt{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--p);margin-bottom:10px}
+    .pp{font-size:52px;font-weight:800;color:var(--dark);letter-spacing:-3px;line-height:1}
+    .pp sup{font-size:22px;letter-spacing:0;font-weight:500;vertical-align:super}
+    .pp sub{font-size:14px;letter-spacing:0;font-weight:400;color:var(--muted)}
+    .pp.talk{font-size:32px;letter-spacing:-1px;padding-top:8px}
+    .pdesc{font-size:14px;color:var(--muted);margin:14px 0 24px;line-height:1.6;min-height:48px}
+    .pf{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+    .pf li{font-size:13.5px;color:#444;display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+    .pf li::before{content:"✓";color:var(--b);font-weight:700;flex-shrink:0;margin-top:1px}
+    .pf.green li::before{color:#10B981}
+    .pb{width:100%;padding:14px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;border:1.5px solid rgba(108,92,231,.25);background:transparent;color:var(--p)}
+    .pb:hover{border-color:var(--p);background:rgba(108,92,231,.04)}
+    .pb.fp{background:var(--p);border-color:var(--p);color:#fff}
+    .pb.fp:hover{background:#7D6EF0;box-shadow:0 6px 20px rgba(108,92,231,.3)}
+    .pb.tp2{border-color:rgba(0,180,216,.3);color:var(--b)}
+    .pb.tp2:hover{border-color:var(--b);background:rgba(0,180,216,.04)}
+    .doc-stack{position:relative;height:130px;margin-bottom:0px}
+    .doc-card-mini{position:absolute;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,.08);padding:12px 14px;box-shadow:0 4px 16px rgba(0,0,0,.07)}
+    .doc-label{font-size:10px;font-weight:700;color:var(--dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}
+    .doc-lines{margin-top:6px;display:flex;flex-direction:column;gap:3px}
+    .doc-line{height:4px;border-radius:2px;background:var(--gray)}
+    .doc-line.p{background:rgba(108,92,231,.2)}
+    .doc-tag{display:inline-block;font-size:8px;font-weight:700;padding:2px 6px;border-radius:4px;margin-top:5px;background:#EEEDFE;color:var(--p)}
+    .doc-tag.b{background:#E0F9FF;color:#006E8A}
+    .comp-table{width:100%;border-collapse:collapse;margin-top:32px}
+    .comp-table th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);padding:12px 16px;border-bottom:2px solid var(--gray)}
+    .comp-table th:not(:first-child){text-align:center}
+    .comp-table td{padding:14px 16px;border-bottom:1px solid var(--gray);font-size:14px;color:#444;vertical-align:middle}
+    .comp-table td:not(:first-child){text-align:center}
+    .comp-table tr:last-child td{border-bottom:none}
+    .comp-table .cat{font-weight:700;color:var(--dark);font-size:13px;padding-top:20px;background:none;border-bottom:none}
+    .tick{color:var(--b);font-size:16px;font-weight:700}
+    .cross{color:#ddd;font-size:16px}
+    .comp-table .hl{background:rgba(108,92,231,.03)}
+    .faq-item{background:#fff;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;margin-bottom:4px}
+    .faq-q{width:100%;background:none;border:none;padding:20px 24px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--dark);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;letter-spacing:-.2px}
+    .faq-icon{width:24px;height:24px;border-radius:50%;background:var(--gray);border:1.5px solid rgba(108,92,231,.25);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--p);flex-shrink:0}
+    .faq-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+    .faq-body-inner{padding:16px 24px 20px;font-size:14.5px;color:var(--muted);line-height:1.75;border-top:1px solid var(--bdr)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:200}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all .3s}
+    .mobile-nav{display:none;position:fixed;top:96px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.08);z-index:99;padding:16px 24px 24px;flex-direction:column;gap:4px}
+    .mobile-nav a{display:block;font-size:15px;font-weight:500;color:var(--dark);text-decoration:none;padding:12px 4px;border-bottom:1px solid rgba(0,0,0,.05)}.mobile-nav a:first-child{padding-top:16px}
+    .mobile-nav a:last-child{border-bottom:none}
+    .mobile-nav .nav-cta{background:var(--p);color:#fff!important;padding:12px 18px;border-radius:8px;font-weight:600;text-align:center;margin-top:8px;border-bottom:none}
+    .mobile-nav.open{display:flex}
+    @media(max-width:900px){
+      nav{padding:0 24px}.nav-links{display:none}
+      .hamburger{display:flex}
+      .sw,.sg{padding:72px 24px}
+      .pg{grid-template-columns:1fr;gap:24px}
+      footer{padding:48px 24px 24px}.fi2{flex-direction:column;gap:32px}.fbtm{flex-direction:column;align-items:flex-start}
+    }
+  
+    .hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+      [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr 1fr!important}
+      [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important}
+      .pc-grid{grid-template-columns:1fr!important}
+      .hiw-steps{grid-template-columns:1fr!important}
+    }
+  
+    @media(max-width:640px){
+      [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr 1fr!important;gap:12px!important}
+      [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;gap:12px!important}
+      [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important}
+      [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+      [style*="grid-template-columns:260px"]{grid-template-columns:1fr!important}
+      [style*="rg-2"],[class*="rg-2"]{grid-template-columns:1fr!important}
+      [style*="rg-3"],[class*="rg-3"]{grid-template-columns:1fr!important}
+      .rg-2,.rg-3{grid-template-columns:1fr!important}
+      /* How-it-works step grids */
+      [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+    }
+  
+    @media(max-width:640px){
+      /* Pricing comparison table */
+      .compare-table{font-size:12px!important}
+      .compare-table th,.compare-table td{padding:8px 6px!important}
+      /* Pricing cards stack */
+      .pc-wrap{flex-direction:column!important;gap:16px!important}
+      /* Hero padding */
+      [style*="padding:146px 48px"]{padding:130px 24px 64px!important}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html" style="display:flex;align-items:center"><svg height="52"
+   viewBox="0 0 193.82932 63.408237"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   sodipodi:docname="govena_new_darktextfinal.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.1930385"
+     inkscape:cx="366.29162"
+     inkscape:cy="119.86202"
+     inkscape:window-width="1024"
+     inkscape:window-height="997"
+     inkscape:window-x="2260"
+     inkscape:window-y="82"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" /><defs
+     id="defs1" /><g
+     id="g1-4"
+     transform="matrix(0.26458333,0,0,0.26458334,208.97755,-105.28286)"><path
+       style="fill:#6c5ce7;fill-opacity:1;stroke-width:0.807118"
+       d="m -719.16395,562.52932 c -1.38501,-1.0704 -3.53687,-2.95163 -4.78193,-4.18047 -1.24506,-1.22883 -2.91604,-3.10595 -3.71323,-4.17134 -0.79719,-1.0654 -1.86501,-2.62814 -2.37292,-3.47279 -0.50792,-0.84465 -1.27364,-2.44363 -1.70157,-3.55326 -0.42793,-1.10962 -0.95054,-2.83782 -1.16144,-3.84042 -0.32221,-1.53143 -0.38314,-5.38251 -0.38112,-24.08247 0,-17.69606 0.0775,-22.84202 0.36853,-25.10066 0.20145,-1.56258 0.4854,-3.42218 0.63092,-4.13245 0.14552,-0.71026 0.54803,-2.22805 0.89445,-3.37294 0.34633,-1.14482 0.89929,-2.71386 1.22859,-3.48675 0.32939,-0.77282 1.00018,-2.16066 1.49075,-3.084 0.49057,-0.92334 1.24014,-2.20182 1.66581,-2.84105 0.42567,-0.63924 1.40931,-1.97583 2.18584,-2.9702 0.77653,-0.99437 2.36622,-2.73774 3.53267,-3.87416 1.16653,-1.13643 3.0618,-2.75978 4.21178,-3.60742 1.14991,-0.84763 3.22896,-2.16009 4.62011,-2.91652 1.39107,-0.75651 3.592,-1.77348 4.89097,-2.25993 1.2989,-0.48653 2.84186,-0.96136 3.42872,-1.05522 l 1.06701,-0.17063 v 8.93157 8.93148 l -0.58112,0.4097 c -0.31962,0.22534 -1.33167,0.89905 -2.24904,1.4972 -0.91729,0.59808 -2.41013,1.77929 -3.31733,2.62491 -0.9072,0.84554 -2.14783,2.24024 -2.75696,3.09933 -0.60913,0.85902 -1.47065,2.28649 -1.91448,3.17214 -0.44392,0.88565 -0.9733,2.10601 -1.17646,2.71191 -0.20315,0.60591 -0.5511,1.89334 -0.77313,2.86108 -0.35506,1.54756 -0.40364,5.84426 -0.40364,35.69166 0,18.66275 -0.0931,33.98976 -0.20679,34.06006 -0.11372,0.0702 -1.33998,-0.74804 -2.72499,-1.81836 z"
+       id="path58" /><path
+       style="fill:#6c5ce7;fill-opacity:1;stroke-width:0.807118"
+       d="m -717.14583,598.11983 c -0.13673,-0.12623 -0.81761,-0.54166 -1.51303,-0.92302 -0.69541,-0.38144 -2.61312,-1.55305 -4.26158,-2.6036 -1.64846,-1.05063 -3.70822,-2.40917 -4.57724,-3.01894 -0.86911,-0.60978 -2.54921,-1.80189 -3.73357,-2.64905 -1.18437,-0.84707 -3.55326,-2.70126 -5.26427,-4.12025 -1.71092,-1.419 -4.60848,-4.03825 -6.43902,-5.82061 -1.83054,-1.78236 -4.39371,-4.51914 -5.69591,-6.08172 -1.30221,-1.56258 -2.89982,-3.59652 -3.55027,-4.51986 -0.65054,-0.92334 -1.67937,-2.49238 -2.28641,-3.48675 -0.60703,-0.99437 -1.47266,-2.51304 -1.92368,-3.37488 -0.45094,-0.86176 -1.18098,-2.43403 -1.62215,-3.49385 -0.44125,-1.05983 -0.97128,-2.44678 -1.17791,-3.08206 -0.20662,-0.63537 -0.55658,-1.79439 -0.77765,-2.57568 -0.22099,-0.78129 -0.52116,-2.00165 -0.66684,-2.71191 -0.14577,-0.71027 -0.41341,-2.27931 -0.59477,-3.48675 -0.25029,-1.66598 -0.32979,-8.26731 -0.32979,-27.37744 0,-18.96326 0.0829,-25.91562 0.33568,-28.1523 0.18459,-1.63361 0.45288,-3.60943 0.59614,-4.39072 0.14326,-0.78129 0.38362,-2.05977 0.53407,-2.84106 0.15045,-0.78129 0.62229,-2.699 1.04861,-4.26158 0.42632,-1.56258 0.99994,-3.48029 1.27476,-4.26158 0.27474,-0.78129 0.6097,-1.62231 0.74424,-1.86905 0.13455,-0.24665 0.24464,-0.56805 0.24464,-0.71413 0,-0.14617 0.74311,-1.8186 1.65136,-3.71662 0.90833,-1.89794 2.48762,-4.83093 3.50959,-6.51756 1.02198,-1.68671 2.68795,-4.17086 3.70209,-5.52036 1.01415,-1.3495 2.19052,-2.86043 2.61418,-3.35761 0.42357,-0.49719 2.34387,-2.47373 4.26731,-4.39232 1.92344,-1.91859 4.85167,-4.50551 6.50723,-5.74871 1.65564,-1.2432 4.03825,-2.90645 5.29469,-3.69611 1.25652,-0.78967 3.62122,-2.10469 5.25482,-2.92229 1.63361,-0.81759 4.07433,-1.90309 5.42384,-2.41222 1.3495,-0.50913 3.38343,-1.21837 4.51986,-1.57611 1.13642,-0.35773 2.82168,-0.83005 3.74502,-1.04959 0.92335,-0.21954 2.76511,-0.58509 4.09282,-0.81233 1.32771,-0.22723 2.57866,-0.34997 2.77987,-0.27276 0.3076,0.11804 0.35505,1.54579 0.29791,8.96715 l -0.0678,8.82675 -2.06622,0.47312 c -1.13642,0.26021 -2.53112,0.60634 -3.09933,0.76918 -0.56821,0.16285 -1.84669,0.58118 -2.84106,0.92962 -0.99437,0.34845 -2.04039,0.73155 -2.3245,0.85136 -0.2841,0.1198 -1.44635,0.65726 -2.58277,1.19434 -1.13643,0.53709 -2.76358,1.38578 -3.61589,1.88598 -0.85232,0.5002 -2.36324,1.48225 -3.35761,2.18233 -0.99437,0.7001 -2.85397,2.17147 -4.13245,3.26988 -1.27847,1.09833 -2.61506,2.33063 -2.97019,2.73855 -0.35513,0.40784 -1.3587,1.55435 -2.23007,2.54767 -0.87136,0.99332 -2.26929,2.794 -3.10643,4.00145 -0.83715,1.20745 -1.84572,2.75138 -2.24129,3.43106 -0.39565,0.67959 -1.1005,1.95806 -1.56645,2.84105 -0.46587,0.88291 -1.32239,2.82572 -1.90327,4.31728 -0.58096,1.49155 -1.39986,4.0485 -1.81981,5.68211 -0.41994,1.6336 -0.92181,3.78376 -1.11535,4.77813 -0.28274,1.45314 -0.35175,6.97794 -0.35175,28.1523 0,21.08354 0.0686,26.62803 0.34464,27.76486 0.1896,0.78129 0.63424,2.35033 0.98808,3.48675 0.35392,1.13642 1.09865,3.02088 1.65499,4.18765 0.55635,1.16685 1.78244,3.2589 2.72467,4.649 0.94215,1.39018 2.43984,3.39926 3.32815,4.46465 0.88832,1.0654 2.82153,3.09933 4.29605,4.51986 1.47452,1.42053 4.07465,3.69918 5.77808,5.0637 1.7035,1.36443 4.3757,3.38707 5.93829,4.49476 1.56258,1.10761 2.92725,2.14136 3.03258,2.29722 0.10541,0.15585 0.16352,4.5159 0.12914,9.68904 -0.0412,6.21344 -0.15335,9.43602 -0.33036,9.49494 -0.14737,0.0492 -0.37982,-0.0137 -0.51655,-0.14036 z"
+       id="path49" /><path
+       style="fill:#6c5ce7;fill-opacity:1;stroke-width:0.807118"
+       d="m -700.47723,636.90734 c -1.0654,-0.34731 -2.57632,-0.87048 -3.35761,-1.16274 -0.78129,-0.29225 -2.58278,-0.99687 -4.00331,-1.56589 -1.42053,-0.56893 -3.22201,-1.32432 -4.0033,-1.67864 -0.78129,-0.35424 -3.29062,-1.54273 -5.5763,-2.64105 -2.28568,-1.09833 -5.30753,-2.63831 -6.71522,-3.42218 -1.4077,-0.78379 -3.14058,-1.74362 -3.85084,-2.13289 -0.71027,-0.38919 -1.8144,-1.00737 -2.45364,-1.37372 -0.63924,-0.36635 -3.19134,-1.93982 -5.6713,-3.49659 -2.48003,-1.55685 -5.87557,-3.80266 -7.54574,-4.99074 -1.67025,-1.18807 -3.81605,-2.75009 -4.76861,-3.47101 -0.95257,-0.721 -2.90329,-2.25686 -4.33504,-3.41306 -1.43174,-1.15619 -3.00772,-2.45331 -3.50224,-2.88254 -0.49452,-0.42914 -1.65677,-1.48961 -2.58278,-2.35654 -0.92601,-0.86693 -2.019,-1.85484 -2.42886,-2.19536 -0.40985,-0.34052 -2.37276,-2.3605 -4.36215,-4.48887 -1.9893,-2.12829 -4.527,-4.99347 -5.63932,-6.36695 -1.11233,-1.37355 -3.08401,-3.99063 -4.38152,-5.81577 -1.29751,-1.82513 -2.58319,-3.72517 -2.85708,-4.22235 -0.27389,-0.49719 -0.85718,-1.4851 -1.29621,-2.19536 -0.43903,-0.71027 -1.46358,-2.56987 -2.2768,-4.13245 -0.81321,-1.56258 -1.95149,-4.0033 -2.52951,-5.42383 -0.57802,-1.42053 -1.40322,-3.6288 -1.83376,-4.90728 -0.43054,-1.27847 -1.02638,-3.2543 -1.32408,-4.39072 -0.29771,-1.13642 -0.71231,-2.95203 -0.92134,-4.03478 -0.20904,-1.08267 -0.55046,-3.40717 -0.7587,-5.16556 -0.30929,-2.61143 -0.37957,-8.09474 -0.38375,-29.93874 -0.004,-21.64612 0.0691,-27.62574 0.38441,-31.38077 0.21424,-2.55147 0.50016,-5.27823 0.63539,-6.05952 0.13521,-0.78129 0.37497,-2.23411 0.53277,-3.22847 0.15782,-0.99437 0.45596,-2.56341 0.66255,-3.48675 0.20659,-0.92335 0.50368,-2.20182 0.66021,-2.84106 0.15652,-0.63924 0.57141,-2.20827 0.92198,-3.48675 0.35056,-1.27847 0.79317,-2.7894 0.98358,-3.35761 0.19042,-0.56821 0.75007,-2.19536 1.24367,-3.61589 0.49359,-1.42052 1.43914,-3.85043 2.1012,-5.39976 0.66205,-1.54934 1.88696,-4.17991 2.722,-5.84572 0.83505,-1.66581 2.12478,-4.05926 2.86607,-5.31877 0.7413,-1.25951 2.27918,-3.68472 3.41753,-5.38936 1.13835,-1.70463 2.88556,-4.14535 3.88268,-5.42383 0.99711,-1.27847 2.94065,-3.60297 4.31888,-5.16555 1.37824,-1.56258 3.53413,-3.83292 4.79081,-5.0452 1.25677,-1.21228 3.09861,-2.89755 4.09298,-3.74503 0.99437,-0.84749 1.86606,-1.60177 1.93708,-1.6762 0.071,-0.0744 0.8846,-0.7229 1.80795,-1.44106 0.92334,-0.71816 2.84105,-2.12855 4.26158,-3.1342 1.42053,-1.00565 3.97748,-2.66891 5.68211,-3.69613 1.70463,-1.02723 4.45925,-2.5392 6.12134,-3.35995 1.66218,-0.82075 4.45158,-2.07226 6.19867,-2.78113 1.74717,-0.70887 4.28079,-1.66376 5.63029,-2.12198 1.3495,-0.45822 2.80232,-0.92339 3.22848,-1.0337 0.42615,-0.11033 1.64652,-0.43426 2.71191,-0.71986 1.0654,-0.2856 3.09933,-0.75699 4.51986,-1.04753 1.42053,-0.29054 3.71468,-0.70651 5.09816,-0.92437 1.38348,-0.21788 3.15591,-0.39613 3.93874,-0.39613 h 1.42335 v 10.06374 c 0,9.48182 -0.0274,10.07836 -0.47192,10.31629 -0.25949,0.1389 -1.10212,0.326 -1.87252,0.41578 -0.77031,0.0898 -2.33039,0.33901 -3.46681,0.55386 -1.13642,0.21486 -3.25099,0.67257 -4.69904,1.01713 -1.44797,0.34458 -4.23737,1.14818 -6.19867,1.78579 -1.96121,0.63761 -3.79829,1.26209 -4.0824,1.38774 -0.2841,0.12564 -1.6788,0.72212 -3.09933,1.32551 -1.42053,0.60339 -3.80314,1.73812 -5.29469,2.52162 -1.49156,0.7835 -3.95367,2.20973 -5.4713,3.16939 -1.5177,0.95967 -3.72597,2.47413 -4.90727,3.36548 -1.18138,0.89135 -2.84525,2.19879 -3.69757,2.90541 -0.85232,0.70662 -2.94437,2.69424 -4.649,4.41694 -1.70463,1.72269 -4.08725,4.38606 -5.29469,5.9186 -1.20745,1.53255 -3.16673,4.31835 -4.35384,6.19068 -1.18719,1.87232 -2.82516,4.74646 -3.63986,6.38701 -0.81479,1.64055 -1.95339,4.13939 -2.53015,5.55297 -0.57677,1.41359 -1.40608,3.58934 -1.8429,4.83488 -0.43689,1.24563 -1.07645,3.33768 -1.42125,4.649 -0.34485,1.31141 -0.92022,3.83712 -1.2786,5.61278 -0.35839,1.77566 -0.86328,4.85562 -1.12198,6.84436 -0.42914,3.29901 -0.47036,6.00375 -0.47036,30.86421 0,24.95835 0.0391,27.49795 0.46454,30.2185 0.2555,1.6336 0.75518,4.13244 1.1104,5.55297 0.35522,1.42053 0.80396,3.04768 0.99719,3.61589 0.19323,0.56821 0.59954,1.67235 0.90302,2.45364 0.30339,0.78129 0.73488,1.82731 0.95885,2.3245 0.22398,0.49718 1.02496,2.14838 1.7801,3.66932 0.75506,1.52093 2.19811,4.06561 3.20676,5.65474 1.00866,1.58922 2.67092,4.00589 3.69394,5.37049 1.02302,1.36451 3.21176,3.99184 4.86385,5.83853 1.65217,1.84668 3.86166,4.17635 4.90995,5.17701 1.04836,1.00067 3.01022,2.78755 4.35972,3.97078 1.3495,1.18324 3.674,3.10611 5.16556,4.27304 1.49155,1.16694 4.28095,3.22323 6.19866,4.5695 1.91772,1.34627 4.76523,3.26149 6.32781,4.25594 1.56258,0.99453 4.41009,2.72361 6.3278,3.84236 1.91772,1.11875 6.10181,3.33953 9.298,4.93504 3.19619,1.59543 6.13087,2.98037 6.52151,3.07746 l 0.71027,0.17668 v -32.43282 c 0,-30.63885 0.025,-32.44396 0.45198,-32.63549 0.2486,-0.11155 4.05496,-0.14472 8.4586,-0.0734 l 8.0066,0.12914 0.0654,32.47842 c 0.0533,26.25192 0.12914,32.47843 0.3975,32.47843 0.18257,0 2.68093,-1.16152 5.55193,-2.58116 l 5.22003,-2.58117 v -35.61634 c 0,-32.81475 -0.0331,-35.62909 -0.42478,-35.77929 -0.23367,-0.0897 -6.45324,-0.15424 -13.82116,-0.14359 -7.36802,0.0105 -13.51108,-0.0516 -13.65136,-0.1381 -0.15884,-0.0982 -0.25496,-3.15817 -0.25496,-8.11734 0,-6.39383 0.0694,-8.01702 0.35109,-8.25109 0.25594,-0.21243 6.35928,-0.27345 22.53473,-0.22535 l 22.18363,0.0662 0.0654,38.67709 c 0.0573,33.75658 0.11356,38.67709 0.44359,38.67709 0.208,0 2.09625,-1.29502 4.19613,-2.87778 2.09996,-1.58276 4.48669,-3.45422 5.30397,-4.15867 l 1.48591,-1.28098 -0.0654,-40.20045 -0.0654,-40.20052 -28.15227,-0.12914 -28.15226,-0.12914 -0.0678,-8.20032 -0.0678,-8.20034 h 36.80828 36.80821 v 38.99996 c 0,23.0575 0.0954,38.99994 0.23342,38.99994 0.12833,0 0.81261,-0.903 1.52061,-2.00666 0.70792,-1.10365 1.55023,-2.46929 1.87179,-3.03476 0.32163,-0.56547 1.06112,-1.95839 1.64329,-3.09546 0.58225,-1.13699 1.25491,-2.53169 1.49478,-3.09933 0.23988,-0.56757 0.68629,-1.67122 0.99195,-2.45251 0.30566,-0.78129 0.71228,-1.88543 0.90365,-2.45364 0.19129,-0.56821 0.59404,-1.96291 0.89493,-3.09933 0.30081,-1.13642 0.65837,-2.70546 0.79453,-3.48675 0.13616,-0.78129 0.36562,-2.23257 0.51002,-3.22508 0.16344,-1.12375 0.26352,-11.28182 0.26522,-26.92546 V 495.5489 h 8.51299 8.51267 v 25.51536 c 0,21.62172 -0.0613,25.96692 -0.40105,28.47512 -0.22059,1.62788 -0.56604,3.77336 -0.76773,4.76773 -0.2017,0.99437 -0.66701,2.95647 -1.03408,4.36021 -0.36716,1.40374 -0.84707,3.089 -1.06661,3.74503 -0.21954,0.65602 -0.98686,2.64557 -1.70504,4.42123 -0.71817,1.77566 -1.9073,4.40291 -2.64242,5.83837 -0.73512,1.43538 -2.0571,3.81799 -2.93775,5.29469 -0.88056,1.47662 -2.61425,4.08725 -3.85269,5.80132 -1.23837,1.71408 -2.94889,3.97934 -3.80121,5.03392 -0.85231,1.0545 -1.89834,2.3245 -2.3245,2.82216 -0.42615,0.49759 -1.70415,1.89342 -2.83992,3.10184 -1.1357,1.20842 -2.8212,2.95252 -3.74543,3.87586 -0.92423,0.92334 -2.37761,2.32337 -3.22968,3.11112 -0.85208,0.78783 -2.42087,2.18648 -3.48627,3.10821 -1.0654,0.92173 -3.06358,2.57236 -4.44036,3.66819 -1.3767,1.09574 -4.39855,3.34227 -6.71522,4.99218 -2.31659,1.64991 -5.31608,3.72356 -6.66558,4.60808 -1.34951,0.88452 -3.90645,2.48044 -5.68211,3.5464 -1.77566,1.06588 -3.98394,2.35557 -4.90728,2.86575 -0.92334,0.51026 -2.55049,1.40455 -3.61589,1.98729 -1.0654,0.58274 -3.91291,2.02941 -6.3278,3.21491 -2.4149,1.18549 -5.02996,2.44468 -5.81125,2.79812 -0.78129,0.35351 -2.58278,1.10825 -4.00331,1.67719 -1.42053,0.56901 -3.22201,1.27088 -4.0033,1.55975 -0.78129,0.28887 -2.05976,0.72455 -2.84105,0.96822 -0.78129,0.24367 -1.68752,0.54464 -2.01384,0.66878 -0.32632,0.12413 -1.43046,0.21171 -2.45364,0.19451 -1.19825,-0.0202 -2.54977,-0.25593 -3.79741,-0.66264 z"
+       id="path45" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:146.667px;line-height:0;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a"
+       x="-574.95618"
+       y="579.60016"
+       id="text2"><tspan
+         id="tspan2"
+         x="-574.95618"
+         y="579.60016"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:146.667px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';fill:#1e1e2f;fill-opacity:1">govena</tspan></text></g></svg></a>
+  <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How it works</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="before-we-begin.html" class="nav-cta">Get your pack</a></li>
+  </ul>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="how-it-works.html">How it works</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="faq.html">FAQ</a>
+  <a href="resources.html">Resources</a>
+  <a href="before-we-begin.html" class="nav-cta">Get your pack</a>
+</div>
+
+<!-- HERO -->
+<section style="background:#0F1729;padding:146px 48px 80px;text-align:center;position:relative;overflow:hidden">
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(108,92,231,.12) 0%,transparent 65%);pointer-events:none"></div>
+  <div class="con" style="position:relative;z-index:1">
+    <h1 style="font-size:clamp(36px,5vw,62px);font-weight:800;letter-spacing:-2.5px;line-height:1.06;color:#fff;margin-bottom:16px">One price. <em style="color:#A29BFE;font-style:normal">Everything included.</em></h1>
+    <p style="font-size:18px;color:rgba(255,255,255,.6);line-height:1.7;max-width:500px;margin:0 auto">No subscriptions. No hidden fees. No lawyers. Pay once, own your governance pack forever.</p>
+  </div>
+</section>
+
+<!-- PRICING CARDS -->
+<section class="sw" style="padding-top:64px">
+  <div class="con">
+    <div style="text-align:center;margin-bottom:12px">
+      <div class="slbl" style="text-align:center">Pricing</div>
+      <h2 class="sh2" style="text-align:center;max-width:100%">Simple pricing. No surprises.</h2>
+    </div>
+    <div class="pg">
+
+      <!-- PACK -->
+      <div class="pc feat">
+        <div class="pbadge">Most popular</div>
+        <div class="doc-stack">
+          <div class="doc-card-mini" style="width:148px;left:50%;transform:translateX(-50%) rotate(-6deg);top:20px;opacity:.5;z-index:1">
+            <div class="doc-label">AI Risk Assessment</div>
+            <div class="doc-lines"><div class="doc-line p" style="width:90%"></div><div class="doc-line" style="width:70%"></div></div>
+          </div>
+          <div class="doc-card-mini" style="width:152px;left:50%;transform:translateX(-50%) rotate(-3deg);top:12px;opacity:.7;z-index:2">
+            <div class="doc-label">AI Vendor Checklist</div>
+            <div class="doc-lines"><div class="doc-line p" style="width:85%"></div><div class="doc-line" style="width:60%"></div></div>
+            <div class="doc-tag b">Due diligence</div>
+          </div>
+          <div class="doc-card-mini" style="width:156px;left:50%;transform:translateX(-50%) rotate(-1deg);top:5px;opacity:.88;z-index:3">
+            <div class="doc-label">Incident Response Plan</div>
+            <div class="doc-lines"><div class="doc-line p" style="width:100%"></div><div class="doc-line" style="width:75%"></div><div class="doc-line" style="width:55%"></div></div>
+          </div>
+          <div class="doc-card-mini" style="width:160px;left:50%;transform:translateX(-50%) rotate(1.5deg);top:0px;z-index:4">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+              <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M7 1H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5L7 1z" stroke="#6C5CE7" stroke-width="1.2" stroke-linecap="round"/><polyline points="7 1 7 5 11 5" stroke="#6C5CE7" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <div class="doc-label" style="font-size:11px;color:var(--p)">AI Acceptable Use Policy</div>
+            </div>
+            <div class="doc-lines"><div class="doc-line p" style="width:100%"></div><div class="doc-line" style="width:80%"></div><div class="doc-line" style="width:65%"></div></div>
+            <div class="doc-tag b">Tailored</div>
+          </div>
+        </div>
+        <div class="pt" style="margin-top:-6px">AI Governance Pack</div>
+        <div class="pp"><sup>$</sup>499<sub> AUD inc. GST</sub></div>
+        <div class="pdesc">Everything you need to implement AI governance — tailored to your business, delivered in minutes.</div>
+        <ul class="pf">
+          <li>AI Acceptable Use Policy</li>
+          <li>AI Risk Assessment</li>
+          <li>AI Vendor Due Diligence Checklist</li>
+          <li>AI Incident Response Plan</li>
+          <li>AI Transparency Statement</li>
+          <li>AI Register</li>
+          <li>Staff AI Training Checklist</li>
+          <li>Implementation Guide</li>
+        </ul>
+        <div style="height:1px;background:var(--bdr);margin:20px 0"></div>
+        <ul class="pf green" style="margin-bottom:28px">
+          <li>Word format — edit anytime</li>
+          <li>Aligned to Australian and international standards</li>
+        </ul>
+        <button class="pb fp" onclick="window.location='before-we-begin.html'">Get your pack &#x2192;</button>
+      </div>
+
+      <!-- PACK + CONSULT -->
+      <div class="pc">
+        <div class="doc-stack">
+          <div class="doc-card-mini" style="width:148px;left:50%;transform:translateX(-50%) rotate(-6deg);top:20px;opacity:.5;z-index:1">
+            <div class="doc-label">AI Risk Assessment</div>
+            <div class="doc-lines"><div class="doc-line p" style="width:90%"></div><div class="doc-line" style="width:70%"></div></div>
+          </div>
+          <div class="doc-card-mini" style="width:152px;left:50%;transform:translateX(-50%) rotate(-3deg);top:12px;opacity:.7;z-index:2">
+            <div class="doc-label">AI Vendor Checklist</div>
+            <div class="doc-lines"><div class="doc-line p" style="width:85%"></div><div class="doc-line" style="width:60%"></div></div>
+            <div class="doc-tag b">Due diligence</div>
+          </div>
+          <div class="doc-card-mini" style="width:156px;left:50%;transform:translateX(-50%) rotate(-1deg);top:5px;opacity:.88;z-index:3">
+            <div class="doc-label">Incident Response Plan</div>
+            <div class="doc-lines"><div class="doc-line p" style="width:100%"></div><div class="doc-line" style="width:75%"></div><div class="doc-line" style="width:55%"></div></div>
+          </div>
+          <div class="doc-card-mini" style="width:160px;left:50%;transform:translateX(-50%) rotate(1.5deg);top:0px;z-index:4">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+              <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M7 1H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5L7 1z" stroke="#6C5CE7" stroke-width="1.2" stroke-linecap="round"/><polyline points="7 1 7 5 11 5" stroke="#6C5CE7" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <div class="doc-label" style="font-size:11px;color:var(--p)">AI Acceptable Use Policy</div>
+            </div>
+            <div class="doc-lines"><div class="doc-line p" style="width:100%"></div><div class="doc-line" style="width:80%"></div><div class="doc-line" style="width:65%"></div></div>
+            <div class="doc-tag b">Tailored</div>
+          </div>
+          <div style="position:absolute;top:-10px;right:calc(50% - 88px);z-index:6">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#6C5CE7,#A29BFE);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(108,92,231,.4);border:2px solid #fff">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#10B981;border:2px solid #fff;position:absolute;bottom:0;right:0"></div>
+          </div>
+        </div>
+        <div class="pt" style="margin-top:-6px">Pack + Expert Consultation</div>
+        <div class="pp"><sup>$</sup>1,199<sub> AUD inc. GST</sub></div>
+        <div class="pdesc">Your tailored pack plus a 60-minute implementation session with an AI governance specialist.</div>
+        <ul class="pf">
+          <li>Everything in Full pack</li>
+          <li>60-min video consultation</li>
+          <li>Expert review of your pack</li>
+          <li>Implementation action plan</li>
+          <li>30-day email support</li>
+        </ul>
+        <div style="height:1px;background:var(--bdr);margin:20px 0"></div>
+        <ul class="pf green" style="margin-bottom:28px">
+          <li>Word format &#x2014; edit anytime</li>
+          <li>Aligned to Australian and international standards</li>
+          <li>One-on-one AI governance specialist support</li>
+        </ul>
+        <button class="pb" onclick="window.location='before-we-begin.html'">Get pack + consult &#x2192;</button>
+      </div>
+
+      <!-- BESPOKE -->
+      <div class="pc" style="background:var(--dark);border-color:rgba(255,255,255,.08)">
+        <div class="doc-stack">
+          <div style="position:absolute;top:-20px;left:0;right:0;display:flex;align-items:flex-start;justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 95" width="260" height="155">
+              <circle cx="80" cy="20" r="16" fill="rgba(108,92,231,.2)" stroke="#6C5CE7" stroke-width="1.5"/>
+              <circle cx="80" cy="16" r="7" fill="#6C5CE7"/>
+              <path d="M62 44 c0-11 8-16 18-16 10 0 18 5 18 16" fill="rgba(108,92,231,.2)" stroke="#6C5CE7" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="92" cy="10" r="8" fill="#6C5CE7" stroke="#0F1729" stroke-width="2"/>
+              <path d="M89 10l2.5 2.5 4.5-4.5" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="112" y="6" width="46" height="56" rx="5" fill="rgba(255,255,255,.05)" stroke="rgba(162,155,254,.3)" stroke-width="1.2"/>
+              <rect x="118" y="16" width="34" height="3" rx="1.5" fill="rgba(108,92,231,.5)"/>
+              <rect x="118" y="24" width="28" height="2.5" rx="1.5" fill="rgba(255,255,255,.15)"/>
+              <rect x="118" y="30" width="32" height="2.5" rx="1.5" fill="rgba(255,255,255,.15)"/>
+              <rect x="118" y="36" width="24" height="2.5" rx="1.5" fill="rgba(255,255,255,.15)"/>
+              <rect x="118" y="42" width="30" height="2.5" rx="1.5" fill="rgba(255,255,255,.15)"/>
+              <rect x="118" y="48" width="20" height="2.5" rx="1.5" fill="rgba(255,255,255,.15)"/>
+              <path d="M100 34 Q106 34 112 30" fill="none" stroke="rgba(108,92,231,.4)" stroke-width="1.2" stroke-dasharray="3 2"/>
+              <circle cx="92" cy="34" r="4" fill="#10B981" stroke="#0F1729" stroke-width="1.5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pt" style="color:#A29BFE;margin-top:-12px">Bespoke Advisory</div>
+        <div class="pp talk" style="color:#fff">Let&#x2019;s talk</div>
+        <div class="pdesc" style="color:rgba(255,255,255,.55)">For larger organisations, complex AI deployments, or businesses needing a fully custom governance solution.</div>
+        <ul class="pf">
+          <li style="color:rgba(255,255,255,.75)">AI governance strategy development</li>
+          <li style="color:rgba(255,255,255,.75)">AI capability audit</li>
+          <li style="color:rgba(255,255,255,.75)">Custom policy and document development</li>
+          <li style="color:rgba(255,255,255,.75)">AI risk assessment and management</li>
+          <li style="color:rgba(255,255,255,.75)">Regulatory and legal compliance mapping</li>
+          <li style="color:rgba(255,255,255,.75)">Training, workshops and executive/board briefings</li>
+          <li style="color:rgba(255,255,255,.75)">Ongoing advisory, monitoring and governance maturity reviews</li>
+        </ul>
+        <div style="height:1px;background:rgba(255,255,255,.08);margin:20px 0"></div>
+        <ul class="pf green" style="margin-bottom:28px">
+          <li style="color:rgba(255,255,255,.75)">Scoped to your specific needs</li>
+          <li style="color:rgba(255,255,255,.75)">Flexible engagement model</li>
+          <li style="color:rgba(255,255,255,.75)">Deliverables agreed upfront</li>
+        </ul>
+        <button class="pb tp2" style="border-color:rgba(162,155,254,.3);color:#A29BFE" onclick="window.location='mailto:hello@govena.com.au?subject=Bespoke Advisory Enquiry'">Get in touch &#x2192;</button>
+      </div>
+
+    </div>
+
+    <!-- Trust strip -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:32px;margin-top:40px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00B4D8" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Secure checkout via Stripe
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00B4D8" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Delivered within 5 minutes
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00B4D8" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Editable Word files
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00B4D8" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Yours to keep forever
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="sg">
+  <div class="con">
+    <div style="text-align:center;margin-bottom:52px">
+      <div class="slbl" style="text-align:center">What&#x2019;s included</div>
+      <h2 class="sh2" style="text-align:center;max-width:100%">7 documents. Every angle covered.</h2>
+      <p class="ssub" style="text-align:center;margin:0 auto">Each document is generated specifically for your business &#x2014; not a generic template.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+      <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid var(--bdr)">
+        <div style="width:36px;height:36px;border-radius:9px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px">Acceptable Use Policy</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.55">Rules for how staff may use AI tools and what data they can share.</div>
+      </div>
+      <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid var(--bdr)">
+        <div style="width:36px;height:36px;border-radius:9px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="1.8" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px">Risk Assessment</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.55">AI-related risks rated and mapped to your industry and operations.</div>
+      </div>
+      <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid var(--bdr)">
+        <div style="width:36px;height:36px;border-radius:9px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px">Vendor Due Diligence</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.55">Checklist for evaluating AI vendors before adoption.</div>
+      </div>
+      <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid var(--bdr)">
+        <div style="width:36px;height:36px;border-radius:9px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="1.8" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px">Incident Response Plan</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.55">Step-by-step procedures for when AI-related incidents occur.</div>
+      </div>
+      <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid var(--bdr)">
+        <div style="width:36px;height:36px;border-radius:9px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px">Transparency Statement</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.55">How your business uses AI &#x2014; for clients, staff and stakeholders.</div>
+      </div>
+      <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid var(--bdr)">
+        <div style="width:36px;height:36px;border-radius:9px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px">AI Register</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.55">A central record of all AI systems in use across your business.</div>
+      </div>
+      <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid var(--bdr)">
+        <div style="width:36px;height:36px;border-radius:9px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="1.8" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px">Staff Training Checklist</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.55">Ensures staff understand AI policy, responsibilities and safe usage.</div>
+      </div>
+      <div style="background:linear-gradient(135deg,#6C5CE7,#A29BFE);border-radius:14px;padding:24px;border:none">
+        <div style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:5px">Implementation Guide</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.55">Step-by-step PDF walkthrough for putting your pack into practice.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="sw">
+  <div class="con" style="max-width:860px">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="slbl" style="text-align:center">Compare options</div>
+      <h2 class="sh2" style="text-align:center;max-width:100%">What&#x2019;s right for you</h2>
+    </div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th style="width:45%"></th>
+          <th>Pack<br><span style="font-size:13px;color:var(--p);font-weight:700;text-transform:none;letter-spacing:0">$499</span></th>
+          <th>Pack + Consult<br><span style="font-size:13px;color:var(--p);font-weight:700;text-transform:none;letter-spacing:0">$1,199</span></th>
+          <th>Bespoke<br><span style="font-size:13px;color:var(--p);font-weight:700;text-transform:none;letter-spacing:0">Custom</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="4" class="cat">Documents</td></tr>
+        <tr class="hl"><td>7 tailored governance documents</td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr><td>PDF Implementation Guide</td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr class="hl"><td>Editable Word (.docx) files</td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr><td>Custom document scope</td><td><span class="cross">&#x2014;</span></td><td><span class="cross">&#x2014;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr><td colspan="4" class="cat">Standards alignment</td></tr>
+        <tr class="hl"><td>Australia&#x2019;s Voluntary AI Safety Standard</td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr><td>ISO/IEC 42001</td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr class="hl"><td>NIST AI Risk Management Framework</td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr><td colspan="4" class="cat">Support &amp; advisory</td></tr>
+        <tr class="hl"><td>60-min expert consultation</td><td><span class="cross">&#x2014;</span></td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr><td>Implementation walkthrough</td><td><span class="cross">&#x2014;</span></td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr class="hl"><td>Implementation action plan</td><td><span class="cross">&#x2014;</span></td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr><td>30-day email support</td><td><span class="cross">&#x2014;</span></td><td><span class="tick">&#x2713;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr class="hl"><td>AI governance strategy development</td><td><span class="cross">&#x2014;</span></td><td><span class="cross">&#x2014;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr><td>Custom policy and document development</td><td><span class="cross">&#x2014;</span></td><td><span class="cross">&#x2014;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr class="hl"><td>Training, workshops and executive/board briefings</td><td><span class="cross">&#x2014;</span></td><td><span class="cross">&#x2014;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+        <tr><td>Ongoing advisory retainer</td><td><span class="cross">&#x2014;</span></td><td><span class="cross">&#x2014;</span></td><td><span class="tick">&#x2713;</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sg">
+  <div class="con" style="max-width:780px">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="slbl" style="text-align:center">FAQs</div>
+      <h2 class="sh2" style="text-align:center;max-width:100%">Common questions</h2>
+    </div>
+    <div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is this actually tailored to my business, or a generic template?<span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">Genuinely tailored &#x2014; not a template with your name swapped in. Your answers about your industry, AI tools, team size, and regulatory context directly shape every document. A healthcare practice gets different provisions to a legal firm or a marketing agency.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How quickly will I receive my pack?<span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">Within 5 minutes of completing your questionnaire and payment. Your documents are generated automatically and delivered to your inbox as editable Word files.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What standards are the documents aligned to?<span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">All documents are aligned to Australia&#x2019;s Voluntary AI Safety Standard, ISO/IEC 42001 (AI Management Systems), and the NIST AI Risk Management Framework &#x2014; the three leading frameworks for responsible AI governance.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I edit the documents once I receive them?<span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">Yes &#x2014; everything is delivered as editable Word (.docx) files. Add your logo, adjust the formatting, and update any details as your business evolves.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is this a subscription?<span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">No. It&#x2019;s a one-time payment. You own your documents outright with no ongoing fees, no subscriptions, and no expiry.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What if I need something more custom?<span class="faq-icon">+</span></button>
+        <div class="faq-body"><div class="faq-body-inner">The Bespoke Advisory option is built for larger organisations, complex AI deployments, or businesses needing a fully custom governance framework. Get in touch at <a href="contact.html">Email us →</a> and we&#x2019;ll scope it out together.</div></div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:32px"><a href="faq.html" style="color:var(--p);font-weight:600;text-decoration:none;font-size:15px">See all FAQs →</a></div>
+</section>
+
+<!-- CTA -->
+<section style="background:#6C5CE7;padding:96px 48px;text-align:center">
+  <div class="con">
+    <h2 style="font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-2px;color:#fff;margin-bottom:14px">Ready to govern AI responsibly?</h2>
+    <p style="font-size:17px;color:rgba(255,255,255,.85);margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7">Takes 5&#x2013;10 minutes. Delivered in 5. Yours to keep forever.</p>
+    <button onclick="window.location='before-we-begin.html'" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#6C5CE7;border:none;padding:15px 36px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;cursor:pointer;letter-spacing:-.3px">Get your pack for $499 →</button>
+    <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.55)">One-time payment &#xB7; All prices inc. GST</div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="fi2">
+    <div class="fbrand"><a href="index.html" style="text-decoration:none"><svg height="38"
+   viewBox="0 0 193.82932 63.408237"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   sodipodi:docname="govena_new_whitetext_final.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.1930385"
+     inkscape:cx="416.58337"
+     inkscape:cy="124.89119"
+     inkscape:window-width="1689"
+     inkscape:window-height="933"
+     inkscape:window-x="1941"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g1-4" /><defs
+     id="defs1" /><g
+     id="g1-4"
+     transform="matrix(0.26458333,0,0,0.26458334,208.97755,-105.28286)"><path
+       style="fill:#6c5ce7;fill-opacity:1;stroke-width:0.807118"
+       d="m -719.16395,562.52932 c -1.38501,-1.0704 -3.53687,-2.95163 -4.78193,-4.18047 -1.24506,-1.22883 -2.91604,-3.10595 -3.71323,-4.17134 -0.79719,-1.0654 -1.86501,-2.62814 -2.37292,-3.47279 -0.50792,-0.84465 -1.27364,-2.44363 -1.70157,-3.55326 -0.42793,-1.10962 -0.95054,-2.83782 -1.16144,-3.84042 -0.32221,-1.53143 -0.38314,-5.38251 -0.38112,-24.08247 0,-17.69606 0.0775,-22.84202 0.36853,-25.10066 0.20145,-1.56258 0.4854,-3.42218 0.63092,-4.13245 0.14552,-0.71026 0.54803,-2.22805 0.89445,-3.37294 0.34633,-1.14482 0.89929,-2.71386 1.22859,-3.48675 0.32939,-0.77282 1.00018,-2.16066 1.49075,-3.084 0.49057,-0.92334 1.24014,-2.20182 1.66581,-2.84105 0.42567,-0.63924 1.40931,-1.97583 2.18584,-2.9702 0.77653,-0.99437 2.36622,-2.73774 3.53267,-3.87416 1.16653,-1.13643 3.0618,-2.75978 4.21178,-3.60742 1.14991,-0.84763 3.22896,-2.16009 4.62011,-2.91652 1.39107,-0.75651 3.592,-1.77348 4.89097,-2.25993 1.2989,-0.48653 2.84186,-0.96136 3.42872,-1.05522 l 1.06701,-0.17063 v 8.93157 8.93148 l -0.58112,0.4097 c -0.31962,0.22534 -1.33167,0.89905 -2.24904,1.4972 -0.91729,0.59808 -2.41013,1.77929 -3.31733,2.62491 -0.9072,0.84554 -2.14783,2.24024 -2.75696,3.09933 -0.60913,0.85902 -1.47065,2.28649 -1.91448,3.17214 -0.44392,0.88565 -0.9733,2.10601 -1.17646,2.71191 -0.20315,0.60591 -0.5511,1.89334 -0.77313,2.86108 -0.35506,1.54756 -0.40364,5.84426 -0.40364,35.69166 0,18.66275 -0.0931,33.98976 -0.20679,34.06006 -0.11372,0.0702 -1.33998,-0.74804 -2.72499,-1.81836 z"
+       id="path58" /><path
+       style="fill:#6c5ce7;fill-opacity:1;stroke-width:0.807118"
+       d="m -717.14583,598.11983 c -0.13673,-0.12623 -0.81761,-0.54166 -1.51303,-0.92302 -0.69541,-0.38144 -2.61312,-1.55305 -4.26158,-2.6036 -1.64846,-1.05063 -3.70822,-2.40917 -4.57724,-3.01894 -0.86911,-0.60978 -2.54921,-1.80189 -3.73357,-2.64905 -1.18437,-0.84707 -3.55326,-2.70126 -5.26427,-4.12025 -1.71092,-1.419 -4.60848,-4.03825 -6.43902,-5.82061 -1.83054,-1.78236 -4.39371,-4.51914 -5.69591,-6.08172 -1.30221,-1.56258 -2.89982,-3.59652 -3.55027,-4.51986 -0.65054,-0.92334 -1.67937,-2.49238 -2.28641,-3.48675 -0.60703,-0.99437 -1.47266,-2.51304 -1.92368,-3.37488 -0.45094,-0.86176 -1.18098,-2.43403 -1.62215,-3.49385 -0.44125,-1.05983 -0.97128,-2.44678 -1.17791,-3.08206 -0.20662,-0.63537 -0.55658,-1.79439 -0.77765,-2.57568 -0.22099,-0.78129 -0.52116,-2.00165 -0.66684,-2.71191 -0.14577,-0.71027 -0.41341,-2.27931 -0.59477,-3.48675 -0.25029,-1.66598 -0.32979,-8.26731 -0.32979,-27.37744 0,-18.96326 0.0829,-25.91562 0.33568,-28.1523 0.18459,-1.63361 0.45288,-3.60943 0.59614,-4.39072 0.14326,-0.78129 0.38362,-2.05977 0.53407,-2.84106 0.15045,-0.78129 0.62229,-2.699 1.04861,-4.26158 0.42632,-1.56258 0.99994,-3.48029 1.27476,-4.26158 0.27474,-0.78129 0.6097,-1.62231 0.74424,-1.86905 0.13455,-0.24665 0.24464,-0.56805 0.24464,-0.71413 0,-0.14617 0.74311,-1.8186 1.65136,-3.71662 0.90833,-1.89794 2.48762,-4.83093 3.50959,-6.51756 1.02198,-1.68671 2.68795,-4.17086 3.70209,-5.52036 1.01415,-1.3495 2.19052,-2.86043 2.61418,-3.35761 0.42357,-0.49719 2.34387,-2.47373 4.26731,-4.39232 1.92344,-1.91859 4.85167,-4.50551 6.50723,-5.74871 1.65564,-1.2432 4.03825,-2.90645 5.29469,-3.69611 1.25652,-0.78967 3.62122,-2.10469 5.25482,-2.92229 1.63361,-0.81759 4.07433,-1.90309 5.42384,-2.41222 1.3495,-0.50913 3.38343,-1.21837 4.51986,-1.57611 1.13642,-0.35773 2.82168,-0.83005 3.74502,-1.04959 0.92335,-0.21954 2.76511,-0.58509 4.09282,-0.81233 1.32771,-0.22723 2.57866,-0.34997 2.77987,-0.27276 0.3076,0.11804 0.35505,1.54579 0.29791,8.96715 l -0.0678,8.82675 -2.06622,0.47312 c -1.13642,0.26021 -2.53112,0.60634 -3.09933,0.76918 -0.56821,0.16285 -1.84669,0.58118 -2.84106,0.92962 -0.99437,0.34845 -2.04039,0.73155 -2.3245,0.85136 -0.2841,0.1198 -1.44635,0.65726 -2.58277,1.19434 -1.13643,0.53709 -2.76358,1.38578 -3.61589,1.88598 -0.85232,0.5002 -2.36324,1.48225 -3.35761,2.18233 -0.99437,0.7001 -2.85397,2.17147 -4.13245,3.26988 -1.27847,1.09833 -2.61506,2.33063 -2.97019,2.73855 -0.35513,0.40784 -1.3587,1.55435 -2.23007,2.54767 -0.87136,0.99332 -2.26929,2.794 -3.10643,4.00145 -0.83715,1.20745 -1.84572,2.75138 -2.24129,3.43106 -0.39565,0.67959 -1.1005,1.95806 -1.56645,2.84105 -0.46587,0.88291 -1.32239,2.82572 -1.90327,4.31728 -0.58096,1.49155 -1.39986,4.0485 -1.81981,5.68211 -0.41994,1.6336 -0.92181,3.78376 -1.11535,4.77813 -0.28274,1.45314 -0.35175,6.97794 -0.35175,28.1523 0,21.08354 0.0686,26.62803 0.34464,27.76486 0.1896,0.78129 0.63424,2.35033 0.98808,3.48675 0.35392,1.13642 1.09865,3.02088 1.65499,4.18765 0.55635,1.16685 1.78244,3.2589 2.72467,4.649 0.94215,1.39018 2.43984,3.39926 3.32815,4.46465 0.88832,1.0654 2.82153,3.09933 4.29605,4.51986 1.47452,1.42053 4.07465,3.69918 5.77808,5.0637 1.7035,1.36443 4.3757,3.38707 5.93829,4.49476 1.56258,1.10761 2.92725,2.14136 3.03258,2.29722 0.10541,0.15585 0.16352,4.5159 0.12914,9.68904 -0.0412,6.21344 -0.15335,9.43602 -0.33036,9.49494 -0.14737,0.0492 -0.37982,-0.0137 -0.51655,-0.14036 z"
+       id="path49" /><path
+       style="fill:#6c5ce7;fill-opacity:1;stroke-width:0.807118"
+       d="m -700.47723,636.90734 c -1.0654,-0.34731 -2.57632,-0.87048 -3.35761,-1.16274 -0.78129,-0.29225 -2.58278,-0.99687 -4.00331,-1.56589 -1.42053,-0.56893 -3.22201,-1.32432 -4.0033,-1.67864 -0.78129,-0.35424 -3.29062,-1.54273 -5.5763,-2.64105 -2.28568,-1.09833 -5.30753,-2.63831 -6.71522,-3.42218 -1.4077,-0.78379 -3.14058,-1.74362 -3.85084,-2.13289 -0.71027,-0.38919 -1.8144,-1.00737 -2.45364,-1.37372 -0.63924,-0.36635 -3.19134,-1.93982 -5.6713,-3.49659 -2.48003,-1.55685 -5.87557,-3.80266 -7.54574,-4.99074 -1.67025,-1.18807 -3.81605,-2.75009 -4.76861,-3.47101 -0.95257,-0.721 -2.90329,-2.25686 -4.33504,-3.41306 -1.43174,-1.15619 -3.00772,-2.45331 -3.50224,-2.88254 -0.49452,-0.42914 -1.65677,-1.48961 -2.58278,-2.35654 -0.92601,-0.86693 -2.019,-1.85484 -2.42886,-2.19536 -0.40985,-0.34052 -2.37276,-2.3605 -4.36215,-4.48887 -1.9893,-2.12829 -4.527,-4.99347 -5.63932,-6.36695 -1.11233,-1.37355 -3.08401,-3.99063 -4.38152,-5.81577 -1.29751,-1.82513 -2.58319,-3.72517 -2.85708,-4.22235 -0.27389,-0.49719 -0.85718,-1.4851 -1.29621,-2.19536 -0.43903,-0.71027 -1.46358,-2.56987 -2.2768,-4.13245 -0.81321,-1.56258 -1.95149,-4.0033 -2.52951,-5.42383 -0.57802,-1.42053 -1.40322,-3.6288 -1.83376,-4.90728 -0.43054,-1.27847 -1.02638,-3.2543 -1.32408,-4.39072 -0.29771,-1.13642 -0.71231,-2.95203 -0.92134,-4.03478 -0.20904,-1.08267 -0.55046,-3.40717 -0.7587,-5.16556 -0.30929,-2.61143 -0.37957,-8.09474 -0.38375,-29.93874 -0.004,-21.64612 0.0691,-27.62574 0.38441,-31.38077 0.21424,-2.55147 0.50016,-5.27823 0.63539,-6.05952 0.13521,-0.78129 0.37497,-2.23411 0.53277,-3.22847 0.15782,-0.99437 0.45596,-2.56341 0.66255,-3.48675 0.20659,-0.92335 0.50368,-2.20182 0.66021,-2.84106 0.15652,-0.63924 0.57141,-2.20827 0.92198,-3.48675 0.35056,-1.27847 0.79317,-2.7894 0.98358,-3.35761 0.19042,-0.56821 0.75007,-2.19536 1.24367,-3.61589 0.49359,-1.42052 1.43914,-3.85043 2.1012,-5.39976 0.66205,-1.54934 1.88696,-4.17991 2.722,-5.84572 0.83505,-1.66581 2.12478,-4.05926 2.86607,-5.31877 0.7413,-1.25951 2.27918,-3.68472 3.41753,-5.38936 1.13835,-1.70463 2.88556,-4.14535 3.88268,-5.42383 0.99711,-1.27847 2.94065,-3.60297 4.31888,-5.16555 1.37824,-1.56258 3.53413,-3.83292 4.79081,-5.0452 1.25677,-1.21228 3.09861,-2.89755 4.09298,-3.74503 0.99437,-0.84749 1.86606,-1.60177 1.93708,-1.6762 0.071,-0.0744 0.8846,-0.7229 1.80795,-1.44106 0.92334,-0.71816 2.84105,-2.12855 4.26158,-3.1342 1.42053,-1.00565 3.97748,-2.66891 5.68211,-3.69613 1.70463,-1.02723 4.45925,-2.5392 6.12134,-3.35995 1.66218,-0.82075 4.45158,-2.07226 6.19867,-2.78113 1.74717,-0.70887 4.28079,-1.66376 5.63029,-2.12198 1.3495,-0.45822 2.80232,-0.92339 3.22848,-1.0337 0.42615,-0.11033 1.64652,-0.43426 2.71191,-0.71986 1.0654,-0.2856 3.09933,-0.75699 4.51986,-1.04753 1.42053,-0.29054 3.71468,-0.70651 5.09816,-0.92437 1.38348,-0.21788 3.15591,-0.39613 3.93874,-0.39613 h 1.42335 v 10.06374 c 0,9.48182 -0.0274,10.07836 -0.47192,10.31629 -0.25949,0.1389 -1.10212,0.326 -1.87252,0.41578 -0.77031,0.0898 -2.33039,0.33901 -3.46681,0.55386 -1.13642,0.21486 -3.25099,0.67257 -4.69904,1.01713 -1.44797,0.34458 -4.23737,1.14818 -6.19867,1.78579 -1.96121,0.63761 -3.79829,1.26209 -4.0824,1.38774 -0.2841,0.12564 -1.6788,0.72212 -3.09933,1.32551 -1.42053,0.60339 -3.80314,1.73812 -5.29469,2.52162 -1.49156,0.7835 -3.95367,2.20973 -5.4713,3.16939 -1.5177,0.95967 -3.72597,2.47413 -4.90727,3.36548 -1.18138,0.89135 -2.84525,2.19879 -3.69757,2.90541 -0.85232,0.70662 -2.94437,2.69424 -4.649,4.41694 -1.70463,1.72269 -4.08725,4.38606 -5.29469,5.9186 -1.20745,1.53255 -3.16673,4.31835 -4.35384,6.19068 -1.18719,1.87232 -2.82516,4.74646 -3.63986,6.38701 -0.81479,1.64055 -1.95339,4.13939 -2.53015,5.55297 -0.57677,1.41359 -1.40608,3.58934 -1.8429,4.83488 -0.43689,1.24563 -1.07645,3.33768 -1.42125,4.649 -0.34485,1.31141 -0.92022,3.83712 -1.2786,5.61278 -0.35839,1.77566 -0.86328,4.85562 -1.12198,6.84436 -0.42914,3.29901 -0.47036,6.00375 -0.47036,30.86421 0,24.95835 0.0391,27.49795 0.46454,30.2185 0.2555,1.6336 0.75518,4.13244 1.1104,5.55297 0.35522,1.42053 0.80396,3.04768 0.99719,3.61589 0.19323,0.56821 0.59954,1.67235 0.90302,2.45364 0.30339,0.78129 0.73488,1.82731 0.95885,2.3245 0.22398,0.49718 1.02496,2.14838 1.7801,3.66932 0.75506,1.52093 2.19811,4.06561 3.20676,5.65474 1.00866,1.58922 2.67092,4.00589 3.69394,5.37049 1.02302,1.36451 3.21176,3.99184 4.86385,5.83853 1.65217,1.84668 3.86166,4.17635 4.90995,5.17701 1.04836,1.00067 3.01022,2.78755 4.35972,3.97078 1.3495,1.18324 3.674,3.10611 5.16556,4.27304 1.49155,1.16694 4.28095,3.22323 6.19866,4.5695 1.91772,1.34627 4.76523,3.26149 6.32781,4.25594 1.56258,0.99453 4.41009,2.72361 6.3278,3.84236 1.91772,1.11875 6.10181,3.33953 9.298,4.93504 3.19619,1.59543 6.13087,2.98037 6.52151,3.07746 l 0.71027,0.17668 v -32.43282 c 0,-30.63885 0.025,-32.44396 0.45198,-32.63549 0.2486,-0.11155 4.05496,-0.14472 8.4586,-0.0734 l 8.0066,0.12914 0.0654,32.47842 c 0.0533,26.25192 0.12914,32.47843 0.3975,32.47843 0.18257,0 2.68093,-1.16152 5.55193,-2.58116 l 5.22003,-2.58117 v -35.61634 c 0,-32.81475 -0.0331,-35.62909 -0.42478,-35.77929 -0.23367,-0.0897 -6.45324,-0.15424 -13.82116,-0.14359 -7.36802,0.0105 -13.51108,-0.0516 -13.65136,-0.1381 -0.15884,-0.0982 -0.25496,-3.15817 -0.25496,-8.11734 0,-6.39383 0.0694,-8.01702 0.35109,-8.25109 0.25594,-0.21243 6.35928,-0.27345 22.53473,-0.22535 l 22.18363,0.0662 0.0654,38.67709 c 0.0573,33.75658 0.11356,38.67709 0.44359,38.67709 0.208,0 2.09625,-1.29502 4.19613,-2.87778 2.09996,-1.58276 4.48669,-3.45422 5.30397,-4.15867 l 1.48591,-1.28098 -0.0654,-40.20045 -0.0654,-40.20052 -28.15227,-0.12914 -28.15226,-0.12914 -0.0678,-8.20032 -0.0678,-8.20034 h 36.80828 36.80821 v 38.99996 c 0,23.0575 0.0954,38.99994 0.23342,38.99994 0.12833,0 0.81261,-0.903 1.52061,-2.00666 0.70792,-1.10365 1.55023,-2.46929 1.87179,-3.03476 0.32163,-0.56547 1.06112,-1.95839 1.64329,-3.09546 0.58225,-1.13699 1.25491,-2.53169 1.49478,-3.09933 0.23988,-0.56757 0.68629,-1.67122 0.99195,-2.45251 0.30566,-0.78129 0.71228,-1.88543 0.90365,-2.45364 0.19129,-0.56821 0.59404,-1.96291 0.89493,-3.09933 0.30081,-1.13642 0.65837,-2.70546 0.79453,-3.48675 0.13616,-0.78129 0.36562,-2.23257 0.51002,-3.22508 0.16344,-1.12375 0.26352,-11.28182 0.26522,-26.92546 V 495.5489 h 8.51299 8.51267 v 25.51536 c 0,21.62172 -0.0613,25.96692 -0.40105,28.47512 -0.22059,1.62788 -0.56604,3.77336 -0.76773,4.76773 -0.2017,0.99437 -0.66701,2.95647 -1.03408,4.36021 -0.36716,1.40374 -0.84707,3.089 -1.06661,3.74503 -0.21954,0.65602 -0.98686,2.64557 -1.70504,4.42123 -0.71817,1.77566 -1.9073,4.40291 -2.64242,5.83837 -0.73512,1.43538 -2.0571,3.81799 -2.93775,5.29469 -0.88056,1.47662 -2.61425,4.08725 -3.85269,5.80132 -1.23837,1.71408 -2.94889,3.97934 -3.80121,5.03392 -0.85231,1.0545 -1.89834,2.3245 -2.3245,2.82216 -0.42615,0.49759 -1.70415,1.89342 -2.83992,3.10184 -1.1357,1.20842 -2.8212,2.95252 -3.74543,3.87586 -0.92423,0.92334 -2.37761,2.32337 -3.22968,3.11112 -0.85208,0.78783 -2.42087,2.18648 -3.48627,3.10821 -1.0654,0.92173 -3.06358,2.57236 -4.44036,3.66819 -1.3767,1.09574 -4.39855,3.34227 -6.71522,4.99218 -2.31659,1.64991 -5.31608,3.72356 -6.66558,4.60808 -1.34951,0.88452 -3.90645,2.48044 -5.68211,3.5464 -1.77566,1.06588 -3.98394,2.35557 -4.90728,2.86575 -0.92334,0.51026 -2.55049,1.40455 -3.61589,1.98729 -1.0654,0.58274 -3.91291,2.02941 -6.3278,3.21491 -2.4149,1.18549 -5.02996,2.44468 -5.81125,2.79812 -0.78129,0.35351 -2.58278,1.10825 -4.00331,1.67719 -1.42053,0.56901 -3.22201,1.27088 -4.0033,1.55975 -0.78129,0.28887 -2.05976,0.72455 -2.84105,0.96822 -0.78129,0.24367 -1.68752,0.54464 -2.01384,0.66878 -0.32632,0.12413 -1.43046,0.21171 -2.45364,0.19451 -1.19825,-0.0202 -2.54977,-0.25593 -3.79741,-0.66264 z"
+       id="path45" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:146.667px;line-height:0;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a"
+       x="-574.95618"
+       y="579.60016"
+       id="text2"><tspan
+         id="tspan2"
+         x="-574.95618"
+         y="579.60016"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:146.667px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';fill:#ffffff;fill-opacity:1">govena</tspan></text></g></svg></a></div>
+        <div class="fcol"><h4>Govena Services</h4><a href="how-it-works.html">How it works</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="resources.html">Resources</a></div>
+    <div class="fcol"><h4>Resources</h4><a href="article-adm-deadline.html">December 2026 ADM deadline</a><a href="article-privacy-5-questions.html">Personal information &amp; AI</a><a href="article-vendor-assessment.html">How to assess an AI vendor</a><a href="article-ai-register.html">Your AI Register</a></div>
+    <div class="fcol">
+      <h4>Get in touch</h4>
+      <p style="font-size:13px;color:#8B8FA8;line-height:1.6;margin-bottom:12px">Questions about the pack, your industry, or which tier is right for you?</p>
+      <a href="contact.html">Email us →</a>
+    </div>
+  </div>
+  <div class="fbtm">
+    <span>© 2026 Govena. All rights reserved.</span>
+    <div style="display:flex;gap:20px">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms-of-service.html">Terms</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const cv = document.getElementById('heroCanvas');
+  if (!cv) return;
+  const ctx = cv.getContext('2d');
+  let W, H, pts;
+
+  function init() {
+    W = cv.width = cv.parentElement.offsetWidth;
+    H = cv.height = cv.parentElement.offsetHeight;
+    pts = Array.from({length: 70}, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - .5) * .5,
+      vy: (Math.random() - .5) * .5,
+      r: Math.random() * 1.8 + .4
+    }));
+  }
+
+  function tick() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+      for (let j = i + 1; j < pts.length; j++) {
+        const q = pts[j];
+        const d = Math.hypot(p.x - q.x, p.y - q.y);
+        if (d < 120) {
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(108,92,231,' + ((1 - d/120) * .35) + ')';
+          ctx.lineWidth = .6;
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.stroke();
+        }
+      }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = i % 3 === 0 ? 'rgba(0,180,216,.6)' : 'rgba(162,155,254,.55)';
+      ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+
+  window.addEventListener('resize', init);
+  init();
+  tick();
+})();
+</script>
+
+<script>
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open')}
+</script>
+</body>
+</html>

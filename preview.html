@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Pack Preview — Govena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--p:#6C5CE7;--v:#A29BFE;--dark:#0F1729;--gray:#F1F2F6;--muted:#666;--bdr:rgba(0,0,0,0.08)}
+    body{font-family:'DM Sans',sans-serif;background:var(--gray);color:var(--dark);min-height:100vh}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr)}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:20px;font-weight:700;color:var(--dark)}
+    .nav-cta{background:var(--p);color:#fff;padding:9px 20px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+    .nav-cta:hover{opacity:.9}
+
+    /* HERO BANNER */
+    .banner{background:linear-gradient(135deg,#1E1E2F 0%,#2D2B55 100%);padding:100px 48px 48px;text-align:center}
+    .banner-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(162,155,254,.15);border:1px solid rgba(162,155,254,.3);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:var(--v);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px}
+    .banner h1{font-size:clamp(24px,3.5vw,40px);font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:12px}
+    .banner p{font-size:16px;color:rgba(255,255,255,.6);max-width:540px;margin:0 auto;line-height:1.6}
+
+    /* LAYOUT */
+    .wrap{max-width:860px;margin:0 auto;padding:48px 24px 0}
+
+    /* DOCUMENT CARD */
+    .doc-card{background:#fff;border-radius:16px;border:1px solid var(--bdr);overflow:hidden;margin-bottom:0;position:relative}
+    .doc-header{background:linear-gradient(135deg,#1E1E2F,#2D2B55);padding:40px 48px 32px}
+    .doc-business{font-size:13px;font-weight:600;color:var(--v);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .doc-title{font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.5px;margin-bottom:8px}
+    .doc-meta{font-size:13px;color:rgba(255,255,255,.45);font-style:italic}
+    .doc-badge{display:inline-flex;align-items:center;gap:6px;margin-top:16px;background:rgba(162,155,254,.15);border:1px solid rgba(162,155,254,.25);border-radius:6px;padding:5px 12px;font-size:11px;font-weight:600;color:var(--v)}
+
+    /* DOCUMENT BODY */
+    .doc-body{padding:40px 48px;position:relative}
+    .doc-section{margin-bottom:32px}
+    .doc-h1{font-size:20px;font-weight:700;color:var(--dark);border-bottom:2px solid #EEEDFE;padding-bottom:10px;margin-bottom:14px;letter-spacing:-.3px}
+    .doc-h2{font-size:16px;font-weight:600;color:var(--dark);margin-bottom:10px;letter-spacing:-.2px}
+    .doc-p{font-size:14px;color:#444;line-height:1.8;margin-bottom:12px}
+    .doc-list{margin:8px 0 12px 0;padding-left:0;list-style:none}
+    .doc-list li{font-size:14px;color:#444;line-height:1.7;padding:3px 0 3px 20px;position:relative}
+    .doc-list li::before{content:'•';position:absolute;left:0;color:var(--p)}
+    .doc-table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+    .doc-table th{background:#F5F4FF;color:var(--dark);font-weight:600;padding:10px 14px;text-align:left;border:1px solid #E8E4FF}
+    .doc-table td{padding:10px 14px;border:1px solid #EEE;color:#444;vertical-align:top;line-height:1.6}
+    .doc-table tr:nth-child(even) td{background:#FAFAFA}
+
+    /* BLUR CUTOFF */
+    .doc-fade{position:relative;overflow:hidden}
+    .doc-fade::after{content:'';position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);pointer-events:none}
+
+    /* CTA SECTION */
+    .cta-section{background:#fff;border-top:1px solid var(--bdr);padding:48px;text-align:center;margin-bottom:48px;border-radius:0 0 16px 16px}
+    .cta-lock{font-size:32px;margin-bottom:16px}
+    .cta-section h2{font-size:22px;font-weight:700;color:var(--dark);letter-spacing:-.3px;margin-bottom:10px}
+    .cta-section p{font-size:15px;color:var(--muted);max-width:480px;margin:0 auto 28px;line-height:1.6}
+    .cta-docs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px}
+    .cta-doc-pill{background:#F5F4FF;border:1px solid #EEEDFE;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:500;color:var(--p)}
+    .btn-buy{display:inline-block;background:var(--p);color:#fff;padding:15px 40px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:-.2px;transition:opacity .2s}
+    .btn-buy:hover{opacity:.9}
+    .cta-note{margin-top:14px;font-size:12px;color:#AAA}
+
+    /* LOADING STATE */
+    .loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px;text-align:center}
+    .spinner{width:44px;height:44px;border:3px solid #EEEDFE;border-top-color:var(--p);border-radius:50%;animation:spin 0.8s linear infinite;margin-bottom:20px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .loading h3{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:8px}
+    .loading p{font-size:14px;color:var(--muted);max-width:360px;line-height:1.6}
+    .loading-steps{margin-top:24px;display:flex;flex-direction:column;gap:10px;width:100%;max-width:340px}
+    .loading-step{display:flex;align-items:center;gap:10px;font-size:13px;color:#AAA;text-align:left}
+    .loading-step.active{color:var(--p);font-weight:500}
+    .loading-step .dot{width:8px;height:8px;border-radius:50%;background:#DDD;flex-shrink:0}
+    .loading-step.active .dot{background:var(--p)}
+
+    /* ERROR STATE */
+    .error-state{padding:60px 24px;text-align:center}
+    .error-state h3{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:10px}
+    .error-state p{font-size:14px;color:var(--muted);margin-bottom:24px}
+    .btn-back{display:inline-block;background:#F5F4FF;color:var(--p);padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+
+    @media(max-width:700px){
+      nav{padding:0 20px}
+      .banner{padding:90px 24px 36px}
+      .doc-header{padding:28px 24px}
+      .doc-body{padding:28px 24px}
+      .cta-section{padding:32px 24px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Govena</a>
+  <button class="nav-cta" onclick="goToCheckout()">Get your full pack →</button>
+</nav>
+
+<div class="banner">
+  <h1>Your AI Governance Pack — <em style="font-style:normal;color:var(--v)" id="banner-name">Tailored for you</em></h1>
+  <p>Here's a preview of your AI Acceptable Use Policy — showing your governance principles and approved tools, tailored to your business. The full pack includes 7 complete documents.</p>
+</div>
+
+<div class="wrap">
+  <div class="doc-card" id="doc-card">
+
+    <!-- Loading state -->
+    <div class="loading" id="loading-state">
+      <div class="spinner"></div>
+      <h3>Generating your preview…</h3>
+      <p>We're tailoring your Acceptable Use Policy to your business right now. This takes about 20 seconds.</p>
+      <div class="loading-steps">
+        <div class="loading-step active" id="ls1"><div class="dot"></div>Analysing your business context</div>
+        <div class="loading-step" id="ls2"><div class="dot"></div>Building your approved tools list</div>
+        <div class="loading-step" id="ls3"><div class="dot"></div>Applying governance principles</div>
+        <div class="loading-step" id="ls4"><div class="dot"></div>Drafting your policy sections</div>
+      </div>
+    </div>
+
+    <!-- Document content (hidden until loaded) -->
+    <div id="doc-content" style="display:none">
+      <div class="doc-header">
+        <div class="doc-business" id="doc-business"></div>
+        <div class="doc-title">AI Acceptable Use Policy</div>
+        <div class="doc-meta" id="doc-meta"></div>
+        <div class="doc-badge">Preview — 1 of 7 documents</div>
+      </div>
+      <div class="doc-fade">
+        <div class="doc-body" id="doc-body"></div>
+      </div>
+    </div>
+
+    <!-- Error state (hidden until needed) -->
+    <div class="error-state" id="error-state" style="display:none">
+      <h3>Something went wrong</h3>
+      <p>We couldn't generate your preview. Please go back and try again, or contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d65686161624d6a627b68636c236e6260236c78">[email&#160;protected]</a></p>
+      <a href="questionnaire.html" class="btn-back">← Back to questionnaire</a>
+    </div>
+
+  </div>
+
+  <!-- CTA (hidden until loaded) -->
+  <div class="cta-section" id="cta-section" style="display:none">
+    <div class="cta-lock">🔒</div>
+    <h2>Get all 7 documents — tailored to <span id="cta-name">your business</span></h2>
+    <p>Your preview shows just part of one document. The full pack includes everything you need to govern AI in your business, ready to use immediately.</p>
+    <div class="cta-docs">
+      <span class="cta-doc-pill">AI Acceptable Use Policy</span>
+      <span class="cta-doc-pill">AI Risk Assessment</span>
+      <span class="cta-doc-pill">Transparency Statement</span>
+      <span class="cta-doc-pill">Incident Response Plan</span>
+      <span class="cta-doc-pill">Vendor Due Diligence Checklist</span>
+      <span class="cta-doc-pill">AI Register</span>
+      <span class="cta-doc-pill">Staff Training Checklist</span>
+    </div>
+    <button class="btn-buy" onclick="goToCheckout()">Get your full pack →</button>
+    <div class="cta-note">Delivered to your inbox within 5 minutes · Editable Word documents · Tailored to your business</div>
+  </div>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Retrieve data passed from the questionnaire via sessionStorage
+  let previewId = null;
+  let tierSelected = 'pack';
+
+  async function init() {
+    // Animate loading steps
+    setTimeout(() => {
+      document.getElementById('ls1').classList.remove('active');
+      document.getElementById('ls2').classList.add('active');
+    }, 5000);
+    setTimeout(() => {
+      document.getElementById('ls2').classList.remove('active');
+      document.getElementById('ls3').classList.add('active');
+    }, 10000);
+    setTimeout(() => {
+      document.getElementById('ls3').classList.remove('active');
+      document.getElementById('ls4').classList.add('active');
+    }, 15000);
+
+    // Get answers from sessionStorage (set by questionnaire page)
+    const raw = sessionStorage.getItem('govena_answers');
+    const tier = sessionStorage.getItem('govena_tier') || 'pack';
+    tierSelected = tier;
+
+    if (!raw) {
+      showError();
+      return;
+    }
+
+    let answers;
+    try { answers = JSON.parse(raw); } catch(e) { showError(); return; }
+
+    // Update banner with business name
+    const name = answers.businessName || 'Your Business';
+    document.getElementById('banner-name').textContent = name;
+    document.getElementById('cta-name').textContent = name;
+
+    try {
+      const res = await fetch('/api/generate-preview', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ answers, tier }),
+      });
+
+      if (!res.ok) throw new Error('Preview generation failed');
+      const data = await res.json();
+
+      previewId = data.previewId;
+      renderPreview(data.preview, data.businessName);
+
+    } catch(err) {
+      console.error(err);
+      showError();
+    }
+  }
+
+  function renderPreview(preview, businessName) {
+    const body = document.getElementById('doc-body');
+    const today = new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    document.getElementById('doc-business').textContent = businessName;
+    document.getElementById('doc-meta').textContent = `Generated ${today} · Version 1.0 · Preview`;
+
+    // Priority sections to show in preview — in order
+    const PREVIEW_SECTIONS = [
+      'purpose', 'scope',
+      'principles', 'guiding',
+      'approved', 'tools'
+    ];
+
+    // Sort sections so priority ones appear first
+    const sections = preview.sections || [];
+    const priority = [];
+    const rest = [];
+    for (const s of sections) {
+      const heading = (s.heading || '').toLowerCase();
+      const isPriority = PREVIEW_SECTIONS.some(k => heading.includes(k));
+      isPriority ? priority.push(s) : rest.push(s);
+    }
+    const ordered = [...priority, ...rest];
+
+    let html = '';
+    for (const section of ordered) {
+      html += `<div class="doc-section">`;
+
+      const tag = section.level === 1 ? 'doc-h1' : 'doc-h2';
+      html += `<div class="${tag}">${escHtml(section.heading)}</div>`;
+
+      if (section.body) {
+        for (const para of section.body.split('\n\n').filter(Boolean)) {
+          html += `<p class="doc-p">${escHtml(para.trim())}</p>`;
+        }
+      }
+
+      if (section.table) {
+        html += `<table class="doc-table"><thead><tr>`;
+        for (const h of section.table.headers) html += `<th>${escHtml(h)}</th>`;
+        html += `</tr></thead><tbody>`;
+        for (const row of section.table.rows) {
+          html += `<tr>`;
+          for (const cell of row) html += `<td>${escHtml(String(cell))}</td>`;
+          html += `</tr>`;
+        }
+        html += `</tbody></table>`;
+      }
+
+      if (section.list?.length) {
+        html += `<ul class="doc-list">`;
+        for (const item of section.list) html += `<li>${escHtml(item)}</li>`;
+        html += `</ul>`;
+      }
+
+      if (section.subsections?.length) {
+        for (const sub of section.subsections) {
+          html += `<div class="doc-section" style="margin-left:0">`;
+          html += `<div class="doc-h2">${escHtml(sub.heading)}</div>`;
+          if (sub.body) {
+            for (const para of sub.body.split('\n\n').filter(Boolean)) {
+              html += `<p class="doc-p">${escHtml(para.trim())}</p>`;
+            }
+          }
+          html += `</div>`;
+        }
+      }
+
+      html += `</div>`;
+    }
+
+    body.innerHTML = html;
+
+    // Show doc, hide loading, show CTA
+    document.getElementById('loading-state').style.display = 'none';
+    document.getElementById('doc-content').style.display = 'block';
+    document.getElementById('cta-section').style.display = 'block';
+  }
+
+  function showError() {
+    document.getElementById('loading-state').style.display = 'none';
+    document.getElementById('error-state').style.display = 'block';
+  }
+
+  async function goToCheckout() {
+    const btn = event?.target;
+    if (btn) { btn.textContent = 'Redirecting…'; btn.disabled = true; }
+
+    try {
+      const res = await fetch('/api/create-checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ previewId, tier: tierSelected }),
+      });
+      if (!res.ok) throw new Error('Checkout failed');
+      const { url } = await res.json();
+      window.location.href = url;
+    } catch(err) {
+      alert('Something went wrong. Please try again or contact hello@govena.com.au');
+      if (btn) { btn.textContent = 'Get your full pack →'; btn.disable

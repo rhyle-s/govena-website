@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources | Govena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1117;
+    --ink-muted: #5a5f72;
+    --ink-faint: #a8acbb;
+    --paper: #f8f7f4;
+    --surface: #ffffff;
+    --rule: #e4e2dc;
+    --accent: #1a3a2a;
+    --accent-warm: #c8622a;
+    --accent-sage: #4a7c59;
+    --accent-sand: #d4c89a;
+    --tag-bg: #eef0ec;
+    --tag-text: #3a5444;
+    --featured-bg: #0f1f17;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248, 247, 244, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink-muted);
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+  .nav-links a.active { font-weight: 500; }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 72px 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .page-header-inner {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 40px;
+  }
+
+  .page-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-sage);
+    margin-bottom: 12px;
+  }
+
+  .page-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    max-width: 560px;
+  }
+
+  .page-title em {
+    font-style: italic;
+    color: var(--accent-sage);
+  }
+
+  .page-desc {
+    margin-top: 16px;
+    color: var(--ink-muted);
+    font-size: 16px;
+    max-width: 480px;
+    line-height: 1.65;
+  }
+
+  .search-wrap {
+    position: relative;
+    width: 260px;
+    flex-shrink: 0;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ink-faint);
+    pointer-events: none;
+  }
+
+  #search {
+    width: 100%;
+    padding: 11px 16px 11px 40px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: var(--surface);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  #search::placeholder { color: var(--ink-faint); }
+  #search:focus {
+    border-color: var(--accent-sage);
+    box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.12);
+  }
+
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 40px 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 7px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--rule);
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--accent-sage);
+    color: var(--accent-sage);
+    background: rgba(74, 124, 89, 0.05);
+  }
+
+  .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 500;
+  }
+
+  /* ── RESULTS COUNT ── */
+  .results-meta {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px 0;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+
+  /* ── FEATURED ARTICLE ── */
+  .featured-section {
+    max-width: 1200px;
+    margin: 28px auto 0;
+    padding: 0 40px;
+  }
+
+  .featured-card {
+    background: var(--featured-bg);
+    border-radius: 16px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .featured-card::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(74,124,89,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-sand);
+    margin-bottom: 16px;
+  }
+
+  .featured-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-sand);
+    display: inline-block;
+  }
+
+  .featured-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .featured-excerpt {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+
+  .featured-meta span { display: flex; align-items: center; gap: 6px; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--accent-sage);
+    color: #fff;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: #3d6b4a;
+    transform: translateY(-1px);
+  }
+
+  .featured-visual {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 32px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .featured-visual-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .risk-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .risk-bar-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 36px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .risk-bar-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    text-align: right;
+  }
+
+  .risk-bar-track {
+    height: 6px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .risk-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 1s cubic-bezier(.4,0,.2,1);
+  }
+
+  .risk-bar-val {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ── ARTICLE GRID ── */
+  .articles-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px 80px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .article-card {
+    background: var(--surface);
+    padding: 28px;
+    cursor: pointer;
+    transition: background 0.12s;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    animation: fadeIn 0.3s ease both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .article-card:hover { background: #f2f1ed; }
+
+  .card-category {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .card-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 20px;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 10px;
+    flex-grow: 1;
+  }
+
+  .card-excerpt {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  .card-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--ink-faint); }
+
+  .card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+  }
+
+  .tag.privacy { background: #eef2f8; color: #2c4a7a; }
+  .tag.risk { background: #fdf2ee; color: #7a3a1a; }
+  .tag.policy { background: #f0f4f0; color: #2a4a32; }
+  .tag.vendor { background: #f6f0fa; color: #5a2a7a; }
+  .tag.incident { background: #fef5e7; color: #7a4a0a; }
+  .tag.training { background: #f0f4f8; color: #1a3a5a; }
+  .tag.adm { background: #faf0f0; color: #7a1a1a; }
+  .tag.transparency { background: #f0f6f4; color: #1a4a3a; }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    text-align: center;
+    padding: 80px 40px;
+    color: var(--ink-muted);
+    grid-column: 1/-1;
+  }
+
+  .empty-state svg {
+    display: block;
+    margin: 0 auto 16px;
+    color: var(--ink-faint);
+  }
+
+  .empty-state h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  /* ── NEWSLETTER ── */
+  .newsletter-bar {
+    background: var(--surface);
+    border-top: 1px solid var(--rule);
+    padding: 48px 40px;
+  }
+
+  .newsletter-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .newsletter-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+
+  .newsletter-desc {
+    color: var(--ink-muted);
+    font-size: 14px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+  }
+
+  .newsletter-form input {
+    padding: 10px 16px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    width: 240px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .newsletter-form input:focus { border-color: var(--accent-sage); }
+
+  /* ── UTILITIES ── */
+  .hidden { display: none !important; }
+  .no-match { opacity: 0.4; pointer-events: none; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Govena</a>
+  <ul class="nav-links">
+    <li><a href="#">Product</a></li>
+    <li><a href="#">Templates</a></li>
+    <li><a href="#" class="active">Resources</a></li>
+    <li><a href="#">Pricing</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <p class="page-eyebrow">Govena Resources</p>
+      <h1 class="page-title">Plain-English <em>AI governance</em> for Australian businesses</h1>
+      <p class="page-desc">Practical guides, regulatory explainers, and implementation advice to help you use AI responsibly — without needing a legal team to get started.</p>
+    </div>
+    <div class="search-wrap">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="search" placeholder="Search articles…" autocomplete="off">
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="Governance Basics">Governance Basics</button>
+  <button class="filter-btn" data-filter="Privacy & Data">Privacy & Data</button>
+  <button class="filter-btn" data-filter="Vendor Risk">Vendor Risk</button>
+  <button class="filter-btn" data-filter="Incident Response">Incident Response</button>
+  <button class="filter-btn" data-filter="Policy & Training">Policy & Training</button>
+  <button class="filter-btn" data-filter="Regulation">Regulation</button>
+  <button class="filter-btn" data-filter="Sector Guides">Sector Guides</button>
+</div>
+
+<!-- RESULTS META -->
+<div class="results-meta">
+  <span id="results-count"></span>
+</div>
+
+<!-- FEATURED -->
+<div class="featured-section" id="featured-section">
+  <div class="featured-card">
+    <div>
+      <div class="featured-badge">Featured guide</div>
+      <h2 class="featured-title">The December 2026 ADM deadline: what Australian businesses need to do now</h2>
+      <p class="featured-excerpt">The Privacy and Other Legislation Amendment Act 2024 requires APP entities to disclose automated decision-making in their privacy policies by 10 December 2026. Here's exactly what that means for your business and the steps to take before the deadline.</p>
+      <div class="featured-meta">
+        <span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          8 min read
+        </span>
+        <span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          March 2026
+        </span>
+      </div>
+      <a href="#" class="btn-primary">
+        Read the guide
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <div class="featured-visual">
+      <div>
+        <div class="featured-visual-label">ADM compliance checklist</div>
+        <div class="risk-bars" id="risk-bars">
+          <div class="risk-bar-row">
+            <span class="risk-bar-label">Privacy policy update</span>
+            <div class="risk-bar-track"><div class="risk-bar-fill" style="width:0%;background:#c8622a"></div></div>
+            <span class="risk-bar-val">High</span>
+          </div>
+          <div class="risk-bar-row">
+            <span class="risk-bar-label">ADM use mapping</span>
+            <div class="risk-bar-track"><div class="risk-bar-fill" style="width:0%;background:#4a7c59"></div></div>
+            <span class="risk-bar-val">Med</span>
+          </div>
+          <div class="risk-bar-row">
+            <span class="risk-bar-label">Human oversight docs</span>
+            <div class="risk-bar-track"><div class="risk-bar-fill" style="width:0%;background:#4a7c59"></div></div>
+            <span class="risk-bar-val">Med</span>
+          </div>
+          <div class="risk-bar-row">
+            <span class="risk-bar-label">Staff training</span>
+            <div class="risk-bar-track"><div class="risk-bar-fill" style="width:0%;background:#d4c89a"></div></div>
+            <span class="risk-bar-val">Low</span>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.25);">Deadline: 10 December 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE GRID -->
+<div class="articles-section">
+  <p class="section-label" id="section-label">All resources</p>
+  <div class="articles-grid" id="articles-grid"></div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-bar">
+  <div class="newsletter-inner">
+    <div>
+      <h3 class="newsletter-title">Stay ahead of AI regulation in Australia</h3>
+      <p class="newsletter-desc">Regulatory updates, new guides, and practical tips — delivered to your inbox. No noise, no spam.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="return false">
+      <input type="email" placeholder="your@email.com">
+      <button type="submit" class="btn-primary">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<script>
+const ARTICLES = [
+  {
+    category: "Governance Basics",
+    title: "What is an AI Acceptable Use Policy — and does your business need one?",
+    excerpt: "If your staff are using AI tools for work, you need an AUP. Here's what it covers, why it matters, and how to get one in place without the legalese.",
+    readTime: "6 min",
+    date: "Mar 2026",
+    tags: ["policy"],
+    tagLabels: ["Policy"]
+  },
+  {
+    category: "Privacy & Data",
+    title: "Personal information and AI tools: the five questions every Australian business must ask",
+    excerpt: "Before entering personal data into any AI tool, there are five essential checks. Walk through each one and understand your obligations under the APPs.",
+    readTime: "7 min",
+    date: "Mar 2026",
+    tags: ["privacy"],
+    tagLabels: ["Privacy"]
+  },
+  {
+    category: "Regulation",
+    title: "Australia's AI ethics principles: a plain-English breakdown",
+    excerpt: "The eight voluntary principles published by the Australian government aren't just for big tech. Here's what they mean for small and mid-size businesses.",
+    readTime: "9 min",
+    date: "Feb 2026",
+    tags: ["policy"],
+    tagLabels: ["Regulation"]
+  },
+  {
+    category: "Vendor Risk",
+    title: "How to assess an AI vendor before you sign up",
+    excerpt: "Not all AI tools are created equal. Use this step-by-step guide to evaluate data ownership, privacy protections, and exit rights before adopting any new tool.",
+    readTime: "10 min",
+    date: "Feb 2026",
+    tags: ["vendor"],
+    tagLabels: ["Vendor risk"]
+  },
+  {
+    category: "Privacy & Data",
+    title: "Offshore AI vendors and the Australian Privacy Principles: what APP 8 actually requires",
+    excerpt: "Most AI tools are hosted overseas. Understanding your cross-border data obligations under APP 8 is essential before you process any personal information.",
+    readTime: "8 min",
+    date: "Feb 2026",
+    tags: ["privacy"],
+    tagLabels: ["Privacy", "Regulation"]
+  },
+  {
+    category: "Incident Response",
+    title: "What to do when something goes wrong with AI: a step-by-step incident response guide",
+    excerpt: "AI incidents don't always look like data breaches. This guide walks through the five response phases — from discovery to post-incident review.",
+    readTime: "11 min",
+    date: "Jan 2026",
+    tags: ["incident"],
+    tagLabels: ["Incident response"]
+  },
+  {
+    category: "Policy & Training",
+    title: "AI training for staff: what 'AI literacy' actually means in practice",
+    excerpt: "Ticking a compliance checkbox isn't the same as genuine AI literacy. Here's how to structure training so your team can use AI safely and effectively.",
+    readTime: "7 min",
+    date: "Jan 2026",
+    tags: ["training"],
+    tagLabels: ["Training"]
+  },
+  {
+    category: "Regulation",
+    title: "The Notifiable Data Breaches scheme and AI: when must you tell the OAIC?",
+    excerpt: "The NDB scheme has a three-part test. We break down how it applies when an AI tool — or an AI vendor — is involved in a data breach.",
+    readTime: "8 min",
+    date: "Jan 2026",
+    tags: ["incident", "privacy"],
+    tagLabels: ["Incident response", "Privacy"]
+  },
+  {
+    category: "Governance Basics",
+    title: "Public AI vs enterprise AI: the distinction that matters most for compliance",
+    excerpt: "Free-tier ChatGPT and enterprise Copilot aren't the same product. Understanding the difference is the single most important thing you can do to protect client data.",
+    readTime: "5 min",
+    date: "Dec 2025",
+    tags: ["policy"],
+    tagLabels: ["Governance basics"]
+  },
+  {
+    category: "Sector Guides",
+    title: "AI governance for law firms: your obligations under the Australian Solicitors' Conduct Rules",
+    excerpt: "Legal practitioners face specific disclosure, competence, and supervision obligations when using AI. This guide translates ASCR requirements into practical steps.",
+    readTime: "10 min",
+    date: "Dec 2025",
+    tags: ["policy", "training"],
+    tagLabels: ["Legal", "Sector guide"]
+  },
+  {
+    category: "Privacy & Data",
+    title: "Does your AI vendor use your data to train its models? Here's how to find out",
+    excerpt: "Data-for-training clauses are buried in terms of service. We explain what to look for, which vendors are transparent about it, and what to do if you can't get a clear answer.",
+    readTime: "6 min",
+    date: "Nov 2025",
+    tags: ["vendor", "privacy"],
+    tagLabels: ["Vendor risk", "Privacy"]
+  },
+  {
+    category: "Governance Basics",
+    title: "Your AI Register: the one document that holds your governance together",
+    excerpt: "The AI Register is the hub of responsible AI governance. Learn what it should contain, how to keep it current, and why a stale register is worse than none at all.",
+    readTime: "6 min",
+    date: "Nov 2025",
+    tags: ["policy"],
+    tagLabels: ["Governance basics"]
+  },
+  {
+    category: "Sector Guides",
+    title: "AI governance for health practitioners: AHPRA standards and patient data",
+    excerpt: "Healthcare providers face heightened obligations around patient information and informed consent. Here's how AHPRA's standards apply when AI is involved in care.",
+    readTime: "9 min",
+    date: "Oct 2025",
+    tags: ["privacy", "training"],
+    tagLabels: ["Health", "Sector guide"]
+  },
+  {
+    category: "Incident Response",
+    title: "Shadow AI: what to do when staff adopt tools you didn't approve",
+    excerpt: "Unauthorised AI tool use is one of the most common governance failures. Here's how to detect it, respond to it, and prevent it from happening again.",
+    readTime: "7 min",
+    date: "Oct 2025",
+    tags: ["incident", "policy"],
+    tagLabels: ["Incident response", "Policy"]
+  },
+  {
+    category: "Regulation",
+    title: "Automated decision-making transparency: what the December 2026 laws actually require",
+    excerpt: "New ADM disclosure obligations apply to APP entities from 10 December 2026. We explain the scope, what counts as 'significant effect', and the exact privacy policy language you need.",
+    readTime: "9 min",
+    date: "Sep 2025",
+    tags: ["adm"],
+    tagLabels: ["ADM", "Regulation"]
+  },
+  {
+    category: "Policy & Training",
+    title: "How to build a positive AI culture — not just a compliance checklist",
+    excerpt: "Staff who feel policed make worse AI decisions than staff who feel informed. Here's how to frame AI governance as an asset, not a restriction.",
+    readTime: "6 min",
+    date: "Sep 2025",
+    tags: ["training", "policy"],
+    tagLabels: ["Culture", "Training"]
+  },
+  {
+    category: "Governance Basics",
+    title: "AI hallucinations: what every professional needs to know about verifying AI outputs",
+    excerpt: "AI tools can generate confident, detailed, completely wrong information. This guide explains why hallucinations happen and five reliable techniques for catching them.",
+    readTime: "7 min",
+    date: "Aug 2025",
+    tags: ["policy"],
+    tagLabels: ["AI basics"]
+  },
+  {
+    category: "Vendor Risk",
+    title: "AI vendor exits: what happens to your data when a startup shuts down?",
+    excerpt: "AI vendors disappear, pivot, or get acquired. Understanding your data deletion rights and exit obligations before signing up can save you from a nasty surprise.",
+    readTime: "5 min",
+    date: "Aug 2025",
+    tags: ["vendor"],
+    tagLabels: ["Vendor risk"]
+  }
+];
+
+const CATEGORY_COLORS = {
+  "Governance Basics": "#2a6644",
+  "Privacy & Data": "#1a3a7a",
+  "Vendor Risk": "#5a2a7a",
+  "Incident Response": "#7a4a0a",
+  "Policy & Training": "#2a5a3a",
+  "Regulation": "#7a1a2a",
+  "Sector Guides": "#2a4a6a"
+};
+
+let activeFilter = "all";
+let searchQuery = "";
+
+function renderArticles() {
+  const grid = document.getElementById("articles-grid");
+  const label = document.getElementById("section-label");
+  const count = document.getElementById("results-count");
+
+  let filtered = ARTICLES.filter(a => {
+    const matchCat = activeFilter === "all" || a.category === activeFilter;
+    const matchSearch = !searchQuery ||
+      a.title.toLowerCase().includes(searchQuery) ||
+      a.excerpt.toLowerCase().includes(searchQuery) ||
+      a.category.toLowerCase().includes(searchQuery) ||
+      a.tagLabels.some(t => t.toLowerCase().includes(searchQuery));
+    return matchCat && matchSearch;
+  });
+
+  label.textContent = activeFilter === "all" ? "All resources" : activeFilter;
+  count.textContent = filtered.length === ARTICLES.length
+    ? `Showing all ${ARTICLES.length} articles`
+    : `${filtered.length} article${filtered.length !== 1 ? "s" : ""} found`;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty-state">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <h3>No articles found</h3>
+      <p>Try a different search or browse all categories.</p>
+    </div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((a, i) => `
+    <div class="article-card" style="animation-delay:${i * 30}ms">
+      <div class="card-category" style="color:${CATEGORY_COLORS[a.category] || '#4a7c59'}">${a.category}</div>
+      <h3 class="card-title">${a.title}</h3>
+      <p class="card-excerpt">${a.excerpt}</p>
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>${a.readTime} read</span>
+          <span class="card-meta-dot"></span>
+          <span>${a.date}</span>
+        </div>
+        <div class="card-tags">
+          ${a.tagLabels.slice(0, 2).map(t => {
+            const tc = a.tags[a.tagLabels.indexOf(t)] || '';
+            return `<span class="tag ${tc}">${t}</span>`;
+          }).join("")}
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+// Filter buttons
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeFilter = btn.dataset.filter;
+    renderArticles();
+    // Hide featured when filtering
+    const feat = document.getElementById("featured-section");
+    feat.style.display = (activeFilter === "all" && !searchQuery) ? "" : "none";
+  });
+});
+
+// Search
+document.getElementById("search").addEventListener("input", e => {
+  searchQuery = e.target.value.toLowerCase().trim();
+  renderArticles();
+  const feat = document.getElementById("featured-section");
+  feat.style.display = (activeFilter === "all" && !searchQuery) ? "" : "none";
+});
+
+// Animate risk bars on load
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const fills = document.querySelectorAll(".risk-bar-fill");
+    const widths = ["82%", "58%", "51%", "34%"];
+    fills.forEach((f, i) => f.style.width = widths[i]);
+  }, 400);
+});
+
+// Initial render
+renderArticles();
+</script>
+</body>
+</html>
