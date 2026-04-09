@@ -166,6 +166,8 @@
     return String(str ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
+  const API_BASE = 'https://govena-backend.vercel.app';
+
   // Retrieve data passed from the questionnaire via sessionStorage
   let previewId = null;
   let tierSelected = 'pack';
@@ -204,7 +206,7 @@
     document.getElementById('cta-name').textContent = name;
 
     try {
-      const res = await fetch('/api/generate-preview', {
+      const res = await fetch(`${API_BASE}/api/generate-preview`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ answers, tier }),
@@ -316,7 +318,7 @@
     if (btn) { btn.textContent = 'Redirecting…'; btn.disabled = true; }
 
     try {
-      const res = await fetch('/api/create-checkout', {
+      const res = await fetch(`${API_BASE}/api/create-checkout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ previewId, tier: tierSelected }),
