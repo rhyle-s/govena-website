@@ -318,4 +318,11 @@
       window.location.href = url;
     } catch(err) {
       alert('Something went wrong. Please try again or contact hello@govena.com.au');
-      if (btn) { btn.textContent = 'Get your full pack →'; btn.disable
+      if (btn) { btn.textContent = 'Get your full pack →'; btn.disabled = false; }
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
