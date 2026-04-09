@@ -187,12 +187,12 @@
     tierSelected = tier;
 
     if (!raw) {
-      showError();
+      showError('sessionStorage was empty (govena_answers not set). Make sure you navigated here from the questionnaire.');
       return;
     }
 
     let answers;
-    try { answers = JSON.parse(raw); } catch(e) { showError(); return; }
+    try { answers = JSON.parse(raw); } catch(e) { showError('JSON parse failed: ' + e.message); return; }
 
     // Update banner with business name
     const name = answers.businessName || 'Your Business';
@@ -214,7 +214,7 @@
 
     } catch(err) {
       console.error(err);
-      showError();
+      showError('API call failed: ' + err.message);
     }
   }
 
@@ -298,9 +298,13 @@
     document.getElementById('cta-section').style.display = 'block';
   }
 
-  function showError() {
+  function showError(reason) {
     document.getElementById('loading-state').style.display = 'none';
     document.getElementById('error-state').style.display = 'block';
+    if (reason) {
+      const p = document.querySelector('#error-state p');
+      if (p) p.innerHTML = `<strong>Debug:</strong> ${reason}<br><br>We couldn't generate your preview. Please go back and try again, or contact <a href="mailto:hello@govena.com.au">hello@govena.com.au</a>`;
+    }
   }
 
   async function goToCheckout() {
