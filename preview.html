@@ -95,12 +95,12 @@
 
 <nav>
   <a class="logo" href="index.html">Govena</a>
-  <button class="nav-cta" onclick="goToCheckout()">Get your full pack →</button>
+  <button class="nav-cta" id="nav-cta" onclick="goToCheckout()">Get your full pack →</button>
 </nav>
 
 <div class="banner">
   <h1>Your AI Governance Pack — <em style="font-style:normal;color:var(--v)" id="banner-name">Tailored for you</em></h1>
-  <p>Here's a preview of your AI Acceptable Use Policy — showing your governance principles and approved tools, tailored to your business. The full pack includes 7 complete documents.</p>
+  <p id="banner-sub">Here's a preview of your AI Acceptable Use Policy — showing your governance principles and approved tools, tailored to your business. The full pack includes 7 complete documents.</p>
 </div>
 
 <div class="wrap">
@@ -125,7 +125,7 @@
         <div class="doc-business" id="doc-business"></div>
         <div class="doc-title">AI Acceptable Use Policy</div>
         <div class="doc-meta" id="doc-meta"></div>
-        <div class="doc-badge">Preview — 1 of 7 documents</div>
+        <div class="doc-badge" id="doc-badge">Preview — 1 of 7 documents</div>
       </div>
       <div class="doc-fade">
         <div class="doc-body" id="doc-body"></div>
@@ -144,18 +144,12 @@
   <!-- CTA (hidden until loaded) -->
   <div class="cta-section" id="cta-section" style="display:none">
     <div class="cta-lock">🔒</div>
-    <h2>Get all 7 documents — tailored to <span id="cta-name">your business</span></h2>
-    <p>Your preview shows just part of one document. The full pack includes everything you need to govern AI in your business, ready to use immediately.</p>
-    <div class="cta-docs">
-      <span class="cta-doc-pill">AI Acceptable Use Policy</span>
-      <span class="cta-doc-pill">AI Risk Assessment</span>
-      <span class="cta-doc-pill">Transparency Statement</span>
-      <span class="cta-doc-pill">Incident Response Plan</span>
-      <span class="cta-doc-pill">Vendor Due Diligence Checklist</span>
-      <span class="cta-doc-pill">AI Register</span>
-      <span class="cta-doc-pill">Implementation Guide</span>
+    <h2 id="cta-heading">Get all 7 documents — tailored to <span id="cta-name">your business</span></h2>
+    <p id="cta-subtext">Your preview shows just part of one document. The full pack includes everything you need to govern AI in your business, ready to use immediately.</p>
+    <div class="cta-docs" id="cta-docs">
+      <!-- Filled dynamically based on tier -->
     </div>
-    <button class="btn-buy" onclick="goToCheckout()">Get your full pack →</button>
+    <button class="btn-buy" id="btn-buy" onclick="goToCheckout()">Get your full pack →</button>
     <div class="cta-note">Delivered to your inbox within 5 minutes · Editable Word documents · Tailored to your business</div>
   </div>
 
@@ -297,6 +291,29 @@
     }
 
     body.innerHTML = html;
+
+    // Update badge and banner for tier
+    const isStarter = tierSelected === 'starter';
+    const docCount = isStarter ? 3 : 7;
+    const badge = document.getElementById('doc-badge');
+    if (badge) badge.textContent = `Preview — 1 of ${docCount} documents`;
+    const bannerSub = document.getElementById('banner-sub');
+    if (bannerSub) bannerSub.textContent = `Here's a preview of your AI Acceptable Use Policy — showing your governance principles and approved tools, tailored to your business. Your pack includes ${docCount} complete documents.`;
+    const navCta = document.getElementById('nav-cta');
+    if (navCta) navCta.textContent = isStarter ? 'Get your Essentials pack →' : 'Get your full pack →';
+
+    // Populate CTA based on tier
+    const STARTER_DOCS = ['AI Acceptable Use Policy','AI Risk Assessment','AI Incident Response Plan'];
+    const PACK_DOCS = ['AI Acceptable Use Policy','AI Risk Assessment','AI Transparency Statement','AI Incident Response Plan','Vendor Due Diligence Checklist','AI Register','Implementation Guide'];
+    const ctaDocs = isStarter ? STARTER_DOCS : PACK_DOCS;
+    document.getElementById('cta-heading').innerHTML = isStarter
+      ? `Get all 3 documents — tailored to <span id="cta-name">${escHtml(businessName)}</span>`
+      : `Get all 7 documents — tailored to <span id="cta-name">${escHtml(businessName)}</span>`;
+    document.getElementById('cta-subtext').textContent = isStarter
+      ? 'Your preview shows just one document. The Essentials pack includes all 3 core governance documents, ready to use immediately.'
+      : 'Your preview shows just part of one document. The full pack includes everything you need to govern AI in your business, ready to use immediately.';
+    document.getElementById('cta-docs').innerHTML = ctaDocs.map(d => `<span class="cta-doc-pill">${escHtml(d)}</span>`).join('');
+    document.getElementById('btn-buy').textContent = isStarter ? 'Get your Essentials pack →' : 'Get your full pack →';
 
     // Show doc, hide loading, show CTA
     document.getElementById('loading-state').style.display = 'none';

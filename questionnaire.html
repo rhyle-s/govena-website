@@ -149,14 +149,9 @@
       input[type=text],input[type=email],select,textarea{font-size:16px!important}
     }
   </style>
-  <script src="https://js.stripe.com/v3/"></script>
   <script>
-    const STRIPE_KEY = 'pk_live_5OASKBNRBb9IxKVSJlhRCokC';
-    const PRICES = {
-      pack: 'price_1TEgTiC6uqbYUIdAwYdlvGbL',
-      consult: 'price_1TEgU9C6uqbYUIdAJJz41B7t'
-    };
-    let selectedPrice = PRICES.pack;
+    const _params = new URLSearchParams(window.location.search);
+    const selectedTier = ['starter', 'pack', 'consult'].includes(_params.get('tier')) ? _params.get('tier') : 'pack';
 
     // ── Required fields per section ──────────────────────────────────────────
     const REQUIRED = {
@@ -350,7 +345,7 @@
       try {
         const answers = collectAnswers();
         sessionStorage.setItem('govena_answers', JSON.stringify(answers));
-        sessionStorage.setItem('govena_tier', selectedPrice === PRICES.consult ? 'consult' : 'pack');
+        sessionStorage.setItem('govena_tier', selectedTier);
         window.location.href = 'preview.html';
       } catch (err) {
         console.error(err);
