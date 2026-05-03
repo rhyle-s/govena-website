@@ -50,8 +50,8 @@
       "offers": {
         "@type": "Offer",
         "priceCurrency": "AUD",
-        "price": "499",
-        "priceSpecification": {"@type": "PriceSpecification", "price": "499", "priceCurrency": "AUD", "valueAddedTaxIncluded": true},
+        "price": "89",
+        "priceSpecification": {"@type": "PriceSpecification", "price": "89", "priceCurrency": "AUD", "valueAddedTaxIncluded": true},
         "availability": "https://schema.org/InStock",
         "seller": {"@type": "Organization", "name": "Govena"}
       }
@@ -151,7 +151,7 @@
     .sl{font-size:13px;color:var(--muted)}
 
     /* PRICING */
-    .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+    .pg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start}
     .pc{border-radius:16px;padding:36px;border:1px solid var(--bdr);background:#fff;position:relative;transition:all .22s}
     .pc:hover{box-shadow:0 8px 32px rgba(0,0,0,.08)}
     .pc.feat{border-color:var(--p);box-shadow:0 0 0 1px var(--p),0 16px 48px rgba(108,92,231,.12)}
@@ -561,6 +561,42 @@
     </div>
     <div class="pg">
 
+      <!-- ESSENTIALS -->
+      <div class="pc">
+        <div class="doc-stack">
+          <div class="doc-card-mini" style="width:148px;left:50%;transform:translateX(-50%) rotate(-4deg);top:16px;opacity:.5;z-index:1">
+            <div class="doc-label">AI Risk Assessment</div>
+            <div class="doc-lines"><div class="doc-line p" style="width:90%"></div><div class="doc-line" style="width:70%"></div></div>
+          </div>
+          <div class="doc-card-mini" style="width:154px;left:50%;transform:translateX(-50%) rotate(-1.5deg);top:8px;opacity:.75;z-index:2">
+            <div class="doc-label">AI Incident Response Plan</div>
+            <div class="doc-lines"><div class="doc-line p" style="width:85%"></div><div class="doc-line" style="width:60%"></div></div>
+          </div>
+          <div class="doc-card-mini" style="width:160px;left:50%;transform:translateX(-50%) rotate(1deg);top:0px;z-index:3">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+              <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M7 1H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5L7 1z" stroke="#6C5CE7" stroke-width="1.2" stroke-linecap="round"/><polyline points="7 1 7 5 11 5" stroke="#6C5CE7" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <div class="doc-label" style="font-size:11px;color:var(--p)">AI Acceptable Use Policy</div>
+            </div>
+            <div class="doc-lines"><div class="doc-line p" style="width:100%"></div><div class="doc-line" style="width:80%"></div><div class="doc-line" style="width:65%"></div></div>
+            <div class="doc-tag b">Tailored</div>
+          </div>
+        </div>
+        <div class="pt" style="margin-top:-6px">AI Governance Essentials</div>
+        <div class="pp"><sup>$</sup>89<sub style="font-size:14px;letter-spacing:0;font-weight:400;color:var(--muted)"> AUD inc. GST</sub></div>
+        <div class="pdiv"></div>
+        <ul class="pf">
+          <li>AI Acceptable Use Policy</li>
+          <li>AI Risk Assessment</li>
+          <li>AI Incident Response Plan</li>
+        </ul>
+        <div style="height:1px;background:rgba(0,0,0,.08);margin:16px 0"></div>
+        <ul class="pf green" style="margin-bottom:28px">
+          <li>Word format — edit anytime</li>
+          <li>Aligned to Australian and international standards</li>
+        </ul>
+        <button class="pb" onclick="window.location='before-we-begin.html?tier=starter'">Get started &#x2192;</button>
+      </div>
+
       <!-- PACK -->
       <div class="pc feat">
         <div class="pbadge">Most popular</div>
@@ -588,7 +624,7 @@
           </div>
         </div>
         <div class="pt" style="margin-top:-6px">AI Governance Pack</div>
-        <div class="pp"><sup>$</sup>499<sub style="font-size:14px;letter-spacing:0;font-weight:400;color:var(--muted)"> AUD inc. GST</sub></div>
+        <div class="pp"><sup>$</sup>159<sub style="font-size:14px;letter-spacing:0;font-weight:400;color:var(--muted)"> AUD inc. GST</sub></div>
         <div class="pdiv"></div>
         <ul class="pf">
           <li>AI Acceptable Use Policy</li>
@@ -604,7 +640,7 @@
           <li>Word format — edit anytime</li>
           <li>Aligned to Australian and international standards</li>
         </ul>
-        <button class="pb fp" onclick="window.location='before-we-begin.html'">Get your pack →</button>
+        <button class="pb fp" onclick="window.location='before-we-begin.html?tier=pack'">Get your pack →</button>
       </div>
 
       <!-- PACK + CONSULT -->
@@ -639,7 +675,7 @@
           </div>
         </div>
         <div class="pt" style="margin-top:-6px">Pack + Expert Consultation</div>
-        <div class="pp"><sup>$</sup>1,199<sub style="font-size:14px;letter-spacing:0;font-weight:400;color:var(--muted)"> AUD inc. GST</sub></div>
+        <div class="pp"><sup>$</sup>499<sub style="font-size:14px;letter-spacing:0;font-weight:400;color:var(--muted)"> AUD inc. GST</sub></div>
         <div class="pdiv"></div>
         <ul class="pf">
           <li>Everything in Full pack</li>
@@ -654,7 +690,7 @@
           <li>Aligned to Australian and international standards</li>
           <li>One-on-one AI governance specialist support</li>
         </ul>
-        <button class="pb" onclick="window.location='before-we-begin.html'">Get pack + consult →</button>
+        <button class="pb" onclick="window.location='before-we-begin.html?tier=consult'">Get pack + consult →</button>
       </div>
 
       <!-- BESPOKE -->
